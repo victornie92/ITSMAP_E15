@@ -21,6 +21,8 @@ public class HTTPhandler {
             //Connect to URL
             connection = (HttpURLConnection) (new URL(BASE_URL + location)).openConnection();
             connection.setRequestMethod("GET");
+            connection.setDoInput(true);
+            connection.setDoOutput(true);
             connection.connect();
 
             //Get response
@@ -44,7 +46,6 @@ public class HTTPhandler {
             try{
                 connection.disconnect();
             } catch (Throwable t){
-
             }
         }
         return null;
