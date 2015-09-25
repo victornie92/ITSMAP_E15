@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75dp"
         android:id="@+id/tempValue" />
 
     <TextView
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="\u2103"
+        android:text="@string/Centius"
         android:id="@+id/tempUnit"
         android:layout_above="@+id/windSpeed"
         android:layout_alignParentRight="true"
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="m/s"
+        android:text="@string/Velocity"
         android:id="@+id/textView3"
         android:layout_below="@+id/tempUnit"
         android:layout_alignParentRight="true"

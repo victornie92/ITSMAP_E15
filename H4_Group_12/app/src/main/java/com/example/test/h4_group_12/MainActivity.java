@@ -35,16 +35,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(serviceBound){
+                    //Two cases
+                    // 1 - we aren't subscribed, but want to subscribe
                     if(subButton.getText().toString().equals("Subscribe")) {
                         LocalBroadcastManager.getInstance(context).registerReceiver(
                                 weatherUpdateReceiver, new IntentFilter("WeatherUpdate"));
                         subButton.setText("Unsubscribe");
                     }
+                    // 2 - we are subscribed, but we want to unsubscribe
                     else if(subButton.getText().toString().equals("Unsubscribe")) {
                         LocalBroadcastManager.getInstance(context).unregisterReceiver(
                                 weatherUpdateReceiver);
                         subButton.setText("Subscribe");
                     }
+                } else{
+                    subButton.setText("The programmers messed up");
                 }
             }
         });
@@ -79,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    //BroadcastReceiver to update view, when subscribed and service makes and update.
     private BroadcastReceiver weatherUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {

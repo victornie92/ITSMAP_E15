@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * Created by Teardrop Ducky on 24/09/2015.
- */
+
+//Class to handle HTTP requests
 public class HTTPhandler {
 
+    //Base URL part
     private static String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
 
     public String getWeatherData(String location){
@@ -33,6 +33,7 @@ public class HTTPhandler {
             while ((line = bufRead.readLine()) != null)
                 buf.append(line + "\r\n");
 
+            //Close and return response
             inStream.close();
             connection.disconnect();
             return buf.toString();

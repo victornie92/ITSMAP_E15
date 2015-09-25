@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">H4_Group_12</string>
+    <string name="app_name">AarhWeatherAPP_Group_12</string>
     <string name="action_settings">d</string>
     <string name="tempValue">--</string>
     <string name="windSpeed">--</string>
     <string name="subBtnText">Subscribe</string>
+    <string name="Centius">℃</string>
+    <string name="Velocity">m/s</string>
 </resources>
