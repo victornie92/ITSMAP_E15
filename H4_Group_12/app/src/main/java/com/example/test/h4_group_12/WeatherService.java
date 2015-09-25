@@ -59,8 +59,8 @@ public class WeatherService extends Service {
 
         @Override
         protected JSONObject doInBackground(String... params) {
-            //String HTTPresponse = ((new HTTPhandler().getWeatherData(params[0])));
-            String HTTPresponse = "{\"coord\":{\"lon\":-0.13,\"lat\":51.51},\"weather\":[{\"id\":802,\"main\":\"Clouds\",\"description\":\"scattered clouds\",\"icon\":\"03n\"}],\"base\":\"stations\",\"main\":{\"temp\":285.1,\"pressure\":1018,\"humidity\":81,\"temp_min\":283.15,\"temp_max\":287.15},\"visibility\":10000,\"wind\":{\"speed\":2.1,\"deg\":230},\"clouds\":{\"all\":40},\"dt\":1443127092,\"sys\":{\"type\":1,\"id\":5089,\"message\":0.0122,\"country\":\"GB\",\"sunrise\":1443073833,\"sunset\":1443117191},\"id\":2643743,\"name\":\"London\",\"cod\":200}\n";
+            String HTTPresponse = ((new HTTPhandler().getWeatherData(params[0])));
+            //String HTTPresponse = "{\"coord\":{\"lon\":-0.13,\"lat\":51.51},\"weather\":[{\"id\":802,\"main\":\"Clouds\",\"description\":\"scattered clouds\",\"icon\":\"03n\"}],\"base\":\"stations\",\"main\":{\"temp\":285.1,\"pressure\":1018,\"humidity\":81,\"temp_min\":283.15,\"temp_max\":287.15},\"visibility\":10000,\"wind\":{\"speed\":2.1,\"deg\":230},\"clouds\":{\"all\":40},\"dt\":1443127092,\"sys\":{\"type\":1,\"id\":5089,\"message\":0.0122,\"country\":\"GB\",\"sunrise\":1443073833,\"sunset\":1443117191},\"id\":2643743,\"name\":\"London\",\"cod\":200}\n";
 //
 
             JSONObject JSONresponse = null;
