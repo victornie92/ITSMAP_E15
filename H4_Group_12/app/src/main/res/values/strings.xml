@@ -6,4 +6,17 @@
     <string name="subBtnText">Subscribe</string>
     <string name="Centius">℃</string>
     <string name="Velocity">m/s</string>
+
+    <string-array name="Cities_array">
+        <item>Aarhus,DK</item>
+        <item>Copenhagen,DK</item>
+        <item>Nuuk,GL</item>
+        <item>LA,US</item>
+        <item>Seattle,US</item>
+        <item>London,UK</item>
+        <item>Seoul,KR</item>
+        <item>Tokyo,JP</item>
+        <item>Melbourne,AU</item>
+    </string-array>
+
 </resources>

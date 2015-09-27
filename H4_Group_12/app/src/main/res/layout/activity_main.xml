@@ -14,6 +14,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="100dp" />
 
+    <Spinner
+        android:id="@+id/CitiesPicker"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lastUpdate"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
     <TextView android:text="@string/tempValue"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="wrap_content"
@@ -73,5 +81,44 @@
         android:layout_below="@+id/tempUnit"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Wind Direction:"
+        android:id="@+id/WindDirectionText"
+        android:layout_below="@+id/WindSpeedText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="--"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/WindDirection"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Last updated: --:--:--"
+        android:id="@+id/lastUpdate"
+        android:layout_alignTop="@+id/subBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Aarhus"
+        android:id="@+id/City"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

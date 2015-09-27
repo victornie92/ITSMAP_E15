@@ -1,5 +1,7 @@
 package com.example.test.h4_group_12;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -36,6 +38,7 @@ public class HTTPhandler {
             //Close and return response
             inStream.close();
             connection.disconnect();
+            Log.i("HTTPhandler", "HTTP received");
             return buf.toString();
         } catch (Throwable t){
             t.printStackTrace();
