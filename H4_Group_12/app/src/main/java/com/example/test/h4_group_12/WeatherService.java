@@ -162,6 +162,8 @@ public class WeatherService extends Service {
             city = intent.getStringExtra("City");
             Log.i("WeatherService", "City update received from MainActivity via Broadcast");
             //Should probably start a task too, so we update as soon as the user subscribe
+            WeatherRetrieveTask task = new WeatherRetrieveTask();
+            task.execute(new String[]{city});
         }
     };
 }

@@ -5,20 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
-import java.util.Map;
+public class ArtistActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
-
-    Button btnHome, btnArtist, btnMap, btnCalender, btnInfo;
+    Button btnArtist, btnMap, btnCalender, btnInfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_artist);
 
-        btnHome = (Button)findViewById(R.id.menu_home);
         btnArtist = (Button)findViewById(R.id.menu_artist);
         btnMap = (Button)findViewById(R.id.menu_map);
         btnCalender = (Button)findViewById(R.id.menu_calender);
@@ -28,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_artist, menu);
         return true;
     }
 
@@ -48,35 +44,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnHome(MenuItem item) {
-        Intent i = new Intent(MainActivity.this, MainActivity.class);
+        Intent i = new Intent(ArtistActivity.this, MainActivity.class);
 
         startActivityForResult(i,2);
         finish();
     }
 
+
     public void btnArtist(MenuItem item) {
-        Intent i = new Intent(MainActivity.this, ArtistActivity.class);
+        Intent i = new Intent(ArtistActivity.this, ArtistActivity.class);
 
         startActivityForResult(i,2);
         finish();
     }
 
     public void btnMap (MenuItem item) {
-        Intent i = new Intent(MainActivity.this, MapActivity.class);
+        Intent i = new Intent(ArtistActivity.this, MapActivity.class);
 
-        startActivityForResult(i,2);
+        startActivityForResult(i, 2);
         finish();
     }
 
     public void btnCalender (MenuItem item) {
-        Intent i = new Intent(MainActivity.this, CalenderActivity.class);
+        Intent i = new Intent(ArtistActivity.this, CalenderActivity.class);
 
         startActivityForResult(i,2);
         finish();
     }
 
     public void btnInfo (MenuItem item) {
-        Intent i = new Intent(MainActivity.this, InfoActivity.class);
+        Intent i = new Intent(ArtistActivity.this, InfoActivity.class);
 
         startActivityForResult(i,2);
         finish();

@@ -5,18 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
-import java.util.Map;
-
-public class MainActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
     Button btnHome, btnArtist, btnMap, btnCalender, btnInfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_map);
 
         btnHome = (Button)findViewById(R.id.menu_home);
         btnArtist = (Button)findViewById(R.id.menu_artist);
@@ -28,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_map, menu);
         return true;
     }
 
@@ -48,35 +45,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnHome(MenuItem item) {
-        Intent i = new Intent(MainActivity.this, MainActivity.class);
+        Intent i = new Intent(MapActivity.this, MainActivity.class);
 
         startActivityForResult(i,2);
         finish();
     }
 
     public void btnArtist(MenuItem item) {
-        Intent i = new Intent(MainActivity.this, ArtistActivity.class);
+        Intent i = new Intent(MapActivity.this, ArtistActivity.class);
 
         startActivityForResult(i,2);
         finish();
     }
 
     public void btnMap (MenuItem item) {
-        Intent i = new Intent(MainActivity.this, MapActivity.class);
+        Intent i = new Intent(MapActivity.this, MapActivity.class);
 
         startActivityForResult(i,2);
         finish();
     }
 
     public void btnCalender (MenuItem item) {
-        Intent i = new Intent(MainActivity.this, CalenderActivity.class);
+        Intent i = new Intent(MapActivity.this, CalenderActivity.class);
 
         startActivityForResult(i,2);
         finish();
     }
 
     public void btnInfo (MenuItem item) {
-        Intent i = new Intent(MainActivity.this, InfoActivity.class);
+        Intent i = new Intent(MapActivity.this, InfoActivity.class);
 
         startActivityForResult(i,2);
         finish();
