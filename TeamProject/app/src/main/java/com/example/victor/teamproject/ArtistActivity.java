@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class ArtistActivity extends AppCompatActivity {
 
@@ -19,6 +20,8 @@ public class ArtistActivity extends AppCompatActivity {
         btnMap = (Button)findViewById(R.id.menu_map);
         btnCalender = (Button)findViewById(R.id.menu_calender);
         btnInfo = (Button)findViewById(R.id.menu_info);
+
+        Toast.makeText(ArtistActivity.this, "Potato", Toast.LENGTH_SHORT).show();
     }
 
     @Override
