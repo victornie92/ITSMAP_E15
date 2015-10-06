@@ -12,12 +12,12 @@
         android:id="@+id/Calender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calender"
         android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:text="Calender"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView
-        android:id="@+id/days"
+        android:id="@+id/Days"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_below="@+id/Calender"></ListView>

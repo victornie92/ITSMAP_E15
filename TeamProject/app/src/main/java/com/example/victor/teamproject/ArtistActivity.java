@@ -14,16 +14,6 @@ public class ArtistActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artist);
-<<<<<<< HEAD
-=======
-
-        btnArtist = (Button)findViewById(R.id.menu_artist);
-        btnMap = (Button)findViewById(R.id.menu_map);
-        btnCalender = (Button)findViewById(R.id.menu_calender);
-        btnInfo = (Button)findViewById(R.id.menu_info);
-
-        Toast.makeText(ArtistActivity.this, "Potato", Toast.LENGTH_SHORT).show();
->>>>>>> origin/master
     }
 
     @Override

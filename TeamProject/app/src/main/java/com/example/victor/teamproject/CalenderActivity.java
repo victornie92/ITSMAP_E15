@@ -12,8 +12,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.List;
+import java.util.Map;
 
 public class CalenderActivity extends AppCompatActivity {
 
@@ -22,9 +26,21 @@ public class CalenderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
 
-        /*String[] days = {"Day 1", "Day 2", "Day 3", "Day 4", "Day 5"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getListView().getContext(), android.R.layout.simple_list_item_1, days);
-        getListView().setAdapter(adapter);*/
+        String [] theDays = {"Day1:", "Day2:", "Day3:", "Day4:", "Day5:"};
+        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, theDays);
+        ListView listView = (ListView) findViewById(R.id.Days);
+
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l){
+
+                String daysPicked = "You selected " + String.valueOf(adapterView.getItemAtPosition(position));
+
+                Toast.makeText(CalenderActivity.this, daysPicked, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
