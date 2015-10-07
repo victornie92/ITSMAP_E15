@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ArtistActivity.class));
                 return true;
             case R.id.menu_map:
-                startActivity(new Intent(MainActivity.this, MapActivity.class));
+                startActivity(new Intent(MainActivity.this, MapsActivity.class));
                 return true;
             case R.id.menu_calender:
                 startActivity(new Intent(MainActivity.this, CalenderActivity.class));

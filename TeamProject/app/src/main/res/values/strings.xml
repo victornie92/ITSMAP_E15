@@ -14,4 +14,5 @@
     <string name="title_activity_info">InfoActivity</string>
     <string name="home">Home</string>
     <string name="btnUpdate">Update</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
