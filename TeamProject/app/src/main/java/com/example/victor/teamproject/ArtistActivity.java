@@ -5,10 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.Toast;
 
-public class ArtistActivity extends AppCompatActivity {
+import com.example.victor.teamproject.Artist.ArtistInterface;
+
+public class ArtistActivity extends AppCompatActivity implements ArtistInterface{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
