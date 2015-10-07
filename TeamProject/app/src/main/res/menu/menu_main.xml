@@ -3,38 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
     <item
-        android:id="@+id/action_menu"
-        android:orderInCategory="100"
-        android:title=""
-        android:icon="@mipmap/menu"
-        app:showAsAction="always">
+    android:id="@+id/action_menu"
+    android:orderInCategory="100"
+    android:title=""
+    android:icon="@mipmap/menu"
+    app:showAsAction="always">
 
-        <menu>
-            <item
-                android:id="@+id/menu_home"
-                android:icon="@mipmap/home"
-                android:title="@string/home"
-                android:onClick="btnHome"/>
-            <item
-                android:id="@+id/menu_artist"
-                android:icon="@mipmap/artist"
-                android:title="@string/artist"
-                android:onClick="btnArtist"/>
-            <item
-                android:id="@+id/menu_map"
-                android:icon="@mipmap/map"
-                android:title="@string/map"
-                android:onClick="btnMap"/>
-            <item
-                android:id="@+id/menu_calender"
-                android:icon="@mipmap/calender"
-                android:title="@string/calender"
-                android:onClick="btnCalender"/>
-            <item
-                android:id="@+id/menu_info"
-                android:icon="@mipmap/info"
-                android:title="@string/info"
-                android:onClick="btnInfo"/>
-        </menu>
-    </item>
+    <menu>
+        <item
+            android:id="@+id/menu_home"
+            android:icon="@mipmap/home"
+            android:title="@string/home"
+            />
+        <item
+            android:id="@+id/menu_artist"
+            android:icon="@mipmap/artist"
+            android:title="@string/artist"/>
+        <item
+            android:id="@+id/menu_map"
+            android:icon="@mipmap/map"
+            android:title="@string/map"/>
+        <item
+            android:id="@+id/menu_calender"
+            android:icon="@mipmap/calender"
+            android:title="@string/calender"/>
+        <item
+            android:id="@+id/menu_info"
+            android:icon="@mipmap/info"
+            android:title="@string/info"/>
+    </menu>
+</item>
 </menu>

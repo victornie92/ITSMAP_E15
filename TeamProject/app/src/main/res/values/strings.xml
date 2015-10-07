@@ -13,4 +13,5 @@
     <string name="title_activity_calender">CalenderActivity</string>
     <string name="title_activity_info">InfoActivity</string>
     <string name="home">Home</string>
+    <string name="btnUpdate">Update</string>
 </resources>
