@@ -1,58 +1,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"  tools:context="com.example.victor.teamproject.MapsActivity"
-    android:orientation="vertical"
-    android:weightSum="1"
-    android:background="#2a2a2a">
+xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+android:layout_height="match_parent"  tools:context="com.example.victor.teamproject.MapsActivity"
+android:orientation="vertical"
+android:weightSum="1"
+android:background="#2a2a2a">
 
-    <fragment android:layout_width="match_parent"
-        android:layout_height="224dp" android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_weight="0.97" />
+<fragment android:layout_width="match_parent"
+    android:layout_height="224dp" android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_weight="0.97" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:layout_width="122dp"
-            android:layout_height="wrap_content"
-            android:text="Locate Me"
-            android:id="@+id/btnMe"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.11"
-            android:onClick="LocateMe" />
-    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Button
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:text="Locate Me"
+        android:id="@+id/btnMe"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.11"
+        android:onClick="LocateMe" />
+</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:text="Find Info"
-            android:id="@+id/btnInfo"
-            android:layout_weight="1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="Find Info"
+        android:id="@+id/btnInfo"
+        android:layout_weight="1"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:text="Find food"
-            android:id="@+id/btnFood"
-            android:layout_weight="1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="Find food"
+        android:id="@+id/btnFood"
+        android:layout_weight="1"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:text="Find Toilets"
-            android:id="@+id/btnFindToilets"
-            android:layout_weight="0.71"/>
-    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="Find Toilets"
+        android:id="@+id/btnFindToilets"
+        android:layout_weight="0.71"/>
+</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <Button
         android:layout_width="wrap_content"
@@ -76,7 +76,7 @@
         android:text="Nearest Toilet"
         android:id="@+id/button"
         android:layout_weight="0.21" />
-        </LinearLayout>
+</LinearLayout>
 
 
 </LinearLayout>

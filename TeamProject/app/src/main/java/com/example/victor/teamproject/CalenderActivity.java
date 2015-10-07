@@ -63,7 +63,7 @@ public class CalenderActivity extends AppCompatActivity {
                 startActivity(new Intent(CalenderActivity.this, ArtistActivity.class));
                 return true;
             case R.id.menu_map:
-                startActivity(new Intent(CalenderActivity.this, MapActivity.class));
+                startActivity(new Intent(CalenderActivity.this, MapsActivity.class));
                 return true;
             case R.id.menu_calender:
                 startActivity(new Intent(CalenderActivity.this, CalenderActivity.class));

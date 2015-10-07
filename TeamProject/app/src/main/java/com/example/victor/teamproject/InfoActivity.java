@@ -36,7 +36,7 @@ public class InfoActivity extends AppCompatActivity {
                 startActivity(new Intent(InfoActivity.this, ArtistActivity.class));
                 return true;
             case R.id.menu_map:
-                startActivity(new Intent(InfoActivity.this, MapActivity.class));
+                startActivity(new Intent(InfoActivity.this, MapsActivity.class));
                 return true;
             case R.id.menu_calender:
                 startActivity(new Intent(InfoActivity.this, CalenderActivity.class));
