@@ -40,7 +40,7 @@ public class WeatherService extends Service {
     public void onCreate(){
         super.onCreate();
 
-        Timer timer = new Timer();
+       /* Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
@@ -53,7 +53,7 @@ public class WeatherService extends Service {
                 });
             }
         };
-        timer.schedule(timerTask, 0, 300000); //5 minut tror jeg :D ok ok
+        timer.schedule(timerTask, 0, 300000); //5 minut tror jeg :D ok ok*/
     }
 
     private class WeatherRetrieveTask extends AsyncTask<String, Void, JSONObject>{

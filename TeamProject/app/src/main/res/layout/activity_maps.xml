@@ -3,7 +3,8 @@ xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_paren
 android:layout_height="match_parent"  tools:context="com.example.victor.teamproject.MapsActivity"
 android:orientation="vertical"
 android:weightSum="1"
-android:background="#2a2a2a">
+android:background="#2a2a2a"
+    android:onClick="nearestInfo">
 
 <fragment android:layout_width="match_parent"
     android:layout_height="224dp" android:id="@+id/map"
@@ -33,21 +34,24 @@ android:background="#2a2a2a">
         android:layout_height="100dp"
         android:text="Find Info"
         android:id="@+id/btnInfo"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:onClick="findInfo" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:text="Find food"
         android:id="@+id/btnFood"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:onClick="findFood" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:text="Find Toilets"
         android:id="@+id/btnFindToilets"
-        android:layout_weight="0.71"/>
+        android:layout_weight="0.71"
+        android:onClick="findToilets" />
 </LinearLayout>
 
 <LinearLayout
@@ -60,7 +64,8 @@ android:background="#2a2a2a">
         android:text="Nearest Info"
         android:id="@+id/button2"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.21" />
+        android:layout_weight="0.21"
+        android:onClick="nearestInfo" />
 
     <Button
         android:layout_width="wrap_content"
@@ -68,14 +73,16 @@ android:background="#2a2a2a">
         android:text="Nearest Restaurant"
         android:id="@+id/button3"
         android:layout_gravity="right"
-        android:layout_weight="0.21" />
+        android:layout_weight="0.21"
+        android:onClick="nearestRestaurant" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="Nearest Toilet"
         android:id="@+id/button"
-        android:layout_weight="0.21" />
+        android:layout_weight="0.21"
+        android:onClick="nearestToilet" />
 </LinearLayout>
 
 
