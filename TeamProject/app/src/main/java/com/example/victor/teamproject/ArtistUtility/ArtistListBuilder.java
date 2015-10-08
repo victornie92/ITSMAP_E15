@@ -2,7 +2,11 @@ package com.example.victor.teamproject.ArtistUtility;
 
 import android.app.Activity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.Date;
 
 
 /**
@@ -19,7 +23,12 @@ public class ArtistListBuilder {
 
     public ArrayList<Artist> getArtistList(){
         ArrayList<Artist> artistArrayList = new ArrayList<>();
-            //Get information from Resource for now, real implementation call it from HTTP
+        Artist tmp;
+
+        tmp = new Artist("IU","potato","21-11-2015","https://www.youtube.com/watch?v=ouR4nn1G9r4",
+                "http://i.imgur.com/ZCdGAHx.jpg");
+        artistArrayList.add(tmp);
+
 
         return artistArrayList;
     }

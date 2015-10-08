@@ -9,5 +9,8 @@ import java.util.ArrayList;
  */
 public interface ArtistInterface {
 
+    public void onArtistSelected(int position);
     public ArrayList<Artist> getArtistList();
+    public Artist getCurrentArtist();
+    public void viewSpecial();
 }
