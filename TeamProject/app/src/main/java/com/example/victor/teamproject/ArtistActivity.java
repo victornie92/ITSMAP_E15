@@ -58,7 +58,22 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
     }
 
     @Override
+    public void onArtistSelected(int position) {
+
+    }
+
+    @Override
     public ArrayList<Artist> getArtistList() {
         return null;
+    }
+
+    @Override
+    public Artist getCurrentArtist() {
+        return null;
+    }
+
+    @Override
+    public void viewSpecial() {
+
     }
 }
