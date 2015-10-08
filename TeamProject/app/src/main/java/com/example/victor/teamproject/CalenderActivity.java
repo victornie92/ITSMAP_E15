@@ -3,8 +3,11 @@ package com.example.victor.teamproject;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,33 +18,42 @@ import android.widget.CalendarView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.util.List;
 import java.util.Map;
 
 public class CalenderActivity extends AppCompatActivity {
+
+    ViewPager pager;
+    ViewPagerAdapter adapter;
+    SlidingTabLayout tabs;
+    CharSequence Days[]={"Day 1","Day 2", "Day 3", "Day 4", "Day 5"};
+    int Numbofdays = 5;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
 
-        String [] theDays = {"Day1:", "Day2:", "Day3:", "Day4:", "Day5:"};
-        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, theDays);
-        ListView listView = (ListView) findViewById(R.id.Days);
+        adapter =  new ViewPagerAdapter(getSupportFragmentManager(),Days,Numbofdays);
 
-        listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        pager = (ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(adapter);
+
+
+        tabs = (SlidingTabLayout) findViewById(R.id.tabs);
+        tabs.setDistributeEvenly(true);
+
+        tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l){
-
-                String daysPicked = "You selected " + String.valueOf(adapterView.getItemAtPosition(position));
-
-                Toast.makeText(CalenderActivity.this, daysPicked, Toast.LENGTH_LONG).show();
-
+            public int getIndicatorColor(int position) {
+                return getResources().getColor(R.color.tabsScrollColor);
             }
         });
+
+        // Setting the ViewPager For the SlidingTabsLayout
+        tabs.setViewPager(pager);
     }
 
     @Override
