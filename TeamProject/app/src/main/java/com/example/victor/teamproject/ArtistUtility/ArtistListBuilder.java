@@ -17,5 +17,10 @@ public class ArtistListBuilder {
         activity = currentActivity;
     }
 
-    public ArrayList<Artist> artistList = new ArrayList<>();
+    public ArrayList<Artist> getArtistList(){
+        ArrayList<Artist> artistArrayList = new ArrayList<>();
+            //Get information from Resource for now, real implementation call it from HTTP
+
+        return artistArrayList;
+    }
 }
