@@ -49,19 +49,18 @@ public class MapsActivity extends FragmentActivity {
             userLatitude = gps.getLatitude(); // returns latitude
             userLongitude = gps.getLongitude(); // returns longitude
             //Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + lat + "\nLong: " + lon, Toast.LENGTH_LONG).show();
-            // Toast.makeText(this, "GPS is Enabled in your devide", Toast.LENGTH_SHORT).show();
             if (userLocationKnown) {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                         new LatLng(userLatitude, userLongitude), 12));
-               // mMap.addMarker(new MarkerOptions().position(new LatLng(userLatitude, userLongitude)).title("You are here!"));
+                setUpMap();
             }
+        }
 
             else {
                 userLocationKnown = false;
                 showGPSAlert();
             }
         }
-    }
 
     private void showGPSAlert(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -125,6 +124,13 @@ public class MapsActivity extends FragmentActivity {
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+        if (userLocationKnown)
+        {
+            if (!tracing && !showingExercises)
+            {
+                mMap.clear();
+            }
+        }
+        mMap.addMarker(new MarkerOptions().position(new LatLng(userLatitude, userLongitude)).title("You are here!"));
     }
 }
