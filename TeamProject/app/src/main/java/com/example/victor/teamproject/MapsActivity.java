@@ -40,28 +40,28 @@ public class MapsActivity extends FragmentActivity {
         setUpMapIfNeeded();
     }
 
-    public void LocateMe(View v) {
+    public void LocateMe(View v)
+    {
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             userLocationKnown = true;
             gps = new GPSTracker(MapsActivity.this);
             userLatitude = gps.getLatitude(); // returns latitude
             userLongitude = gps.getLongitude(); // returns longitude
-            Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + userLatitude + "\nLong: " + userLongitude, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + lat + "\nLong: " + lon, Toast.LENGTH_LONG).show();
             // Toast.makeText(this, "GPS is Enabled in your devide", Toast.LENGTH_SHORT).show();
-            if (userLocationKnown = true)
-            {
+            if (userLocationKnown) {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                         new LatLng(userLatitude, userLongitude), 12));
-                setUpMap();
-                //mMap.addMarker(new MarkerOptions().position(new LatLng(userLatitude, userLongitude)).title("You are here!"));
+               // mMap.addMarker(new MarkerOptions().position(new LatLng(userLatitude, userLongitude)).title("You are here!"));
             }
-            } else {
+
+            else {
                 userLocationKnown = false;
                 showGPSAlert();
             }
         }
-
+    }
 
     private void showGPSAlert(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -125,12 +125,6 @@ public class MapsActivity extends FragmentActivity {
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-        if(userLocationKnown) {
-
-            if(!tracing && !showingExercises){
-                mMap.clear();   //if we are not tracking, remove the marker first
-            }
-            mMap.addMarker(new MarkerOptions().position(new LatLng(userLatitude, userLongitude)).title("You are here!"));
-        }
+        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
 }
