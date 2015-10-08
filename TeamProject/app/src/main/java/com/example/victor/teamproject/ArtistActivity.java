@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.victor.teamproject.Artist.ArtistInterface;
+import com.example.victor.teamproject.ArtistUtility.Artist;
 
-public class ArtistActivity extends AppCompatActivity implements ArtistInterface{
+import java.util.ArrayList;
+
+
+public class ArtistActivity extends AppCompatActivity implements ArtistInterface {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +51,10 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public ArrayList<Artist> getArtistList() {
+        return null;
     }
 }
