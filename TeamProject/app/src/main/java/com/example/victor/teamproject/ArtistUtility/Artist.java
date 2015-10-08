@@ -11,9 +11,9 @@ public class Artist {
     private String description;
     private String vidURL;
     private String picURL;
-    private Date concertDate;
+    private String concertDate;
 
-    public Artist(String artistName, String artistDiscribtion, Date dateOfConcert, String videoURL, String pictureURL){
+    public Artist(String artistName, String artistDiscribtion, String dateOfConcert, String videoURL, String pictureURL){
 
         name = artistName;
         description = artistDiscribtion;
@@ -34,7 +34,7 @@ public class Artist {
         return description;
     }
 
-    public Date getConcertDate() {
+    public String getConcertDate() {
         return concertDate;
     }
 
