@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.victor.teamproject.artist.ArtistInterface;
+import com.example.victor.teamproject.Artist.ArtistInterface;
 
 public class ArtistActivity extends AppCompatActivity implements ArtistInterface{
 
