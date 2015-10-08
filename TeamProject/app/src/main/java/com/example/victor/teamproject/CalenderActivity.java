@@ -39,6 +39,7 @@ public class CalenderActivity extends AppCompatActivity {
                 String daysPicked = "You selected " + String.valueOf(adapterView.getItemAtPosition(position));
 
                 Toast.makeText(CalenderActivity.this, daysPicked, Toast.LENGTH_LONG).show();
+
             }
         });
     }
