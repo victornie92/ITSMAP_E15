@@ -53,7 +53,7 @@ public class MapsActivity extends FragmentActivity {
             if (userLocationKnown) {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                         new LatLng(userLatitude, userLongitude), 12));
-                mMap.addMarker(new MarkerOptions().position(new LatLng(userLatitude, userLongitude)).title("You are here!"));
+               // mMap.addMarker(new MarkerOptions().position(new LatLng(userLatitude, userLongitude)).title("You are here!"));
             }
 
             else {
