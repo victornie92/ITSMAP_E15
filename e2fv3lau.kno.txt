@@ -1,0 +1,49 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	TeamProject/app/src/main/res/objects/poro.json
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 5 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   TeamProject/.idea/misc.xml
+#	modified:   TeamProject/app/app.iml
+#	modified:   TeamProject/app/build.gradle
+#	deleted:    TeamProject/app/src/main/java/com/example/victor/teamproject/Artist/ArtistInterface.java
+#	modified:   TeamProject/app/src/main/java/com/example/victor/teamproject/ArtistActivity.java
+#	new file:   TeamProject/app/src/main/java/com/example/victor/teamproject/ArtistInterface.java
+#	new file:   TeamProject/app/src/main/java/com/example/victor/teamproject/ArtistUtility/Artist.java
+#	new file:   TeamProject/app/src/main/java/com/example/victor/teamproject/ArtistUtility/ArtistListBuilder.java
+#	modified:   TeamProject/app/src/main/java/com/example/victor/teamproject/CalenderActivity.java
+#	new file:   TeamProject/app/src/main/java/com/example/victor/teamproject/Day1.java
+#	new file:   TeamProject/app/src/main/java/com/example/victor/teamproject/Day2.java
+#	new file:   TeamProject/app/src/main/java/com/example/victor/teamproject/SlidingTabLayout.java
+#	new file:   TeamProject/app/src/main/java/com/example/victor/teamproject/SlidingTabStrip.java
+#	new file:   TeamProject/app/src/main/java/com/example/victor/teamproject/ViewPagerAdapter.java
+#	new file:   TeamProject/app/src/main/res/color/selector.xml
+#	modified:   TeamProject/app/src/main/res/layout/activity_calender.xml
+#	new file:   TeamProject/app/src/main/res/layout/day_1.xml
+#	new file:   TeamProject/app/src/main/res/layout/day_2.xml
+#	new file:   TeamProject/app/src/main/res/values-v21/styles.xml
+#	new file:   TeamProject/app/src/main/res/values/colors.xml
+#	modified:   TeamProject/app/src/main/res/values/dimens.xml
+#	modified:   TeamProject/app/src/main/res/values/strings.xml
+#	modified:   TeamProject/app/src/main/res/values/styles.xml
+#
+# Changes not staged for commit:
+#	modified:   TeamProject/app/src/main/java/com/example/victor/teamproject/MapsActivity.java
+#
+
