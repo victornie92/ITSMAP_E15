@@ -27,7 +27,7 @@ public class CalenderActivity extends AppCompatActivity {
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
     CharSequence Days[]={"Day 1","Day 2", "Day 3", "Day 4", "Day 5"};
-    int Numbofdays = 5;
+    int NumbOfdays = 5;
 
 
     @Override
@@ -35,8 +35,7 @@ public class CalenderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
 
-        adapter =  new ViewPagerAdapter(getSupportFragmentManager(),Days,Numbofdays);
-
+        adapter =  new ViewPagerAdapter(getSupportFragmentManager(),Days, NumbOfdays);
 
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
@@ -52,7 +51,6 @@ public class CalenderActivity extends AppCompatActivity {
             }
         });
 
-        // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(pager);
     }
 

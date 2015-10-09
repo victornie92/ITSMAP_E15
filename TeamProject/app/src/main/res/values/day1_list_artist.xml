@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="day1_list_artist_array">
+        <item>Drake</item>
+        <item>The Weekend</item>
+        <item>Fetty Wap</item>
+        <item>Taylor Swift</item>
+    </string-array>
+
+</resources>

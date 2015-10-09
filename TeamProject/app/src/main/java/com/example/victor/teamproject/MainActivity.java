@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     WeatherService weatherService;
     boolean serviceBound = false;
 
-    @Override
+   /* @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceDisconnected(ComponentName name) {
             serviceBound = false;
         }
-    };
+    };*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

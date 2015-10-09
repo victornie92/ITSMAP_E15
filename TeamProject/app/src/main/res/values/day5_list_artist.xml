@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="day5_list_artist_array">
+        <item>Meghan Trainor</item>
+        <item>Ellie Goulding</item>
+        <item>Disclosure</item>
+        <item>Maroon 5</item>
+    </string-array>
+
+</resources>

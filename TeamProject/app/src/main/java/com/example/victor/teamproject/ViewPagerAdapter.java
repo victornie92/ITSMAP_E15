@@ -27,10 +27,25 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             Day1 day1 = new Day1();
             return day1;
         }
-        else             // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
+        else if (position == 1)// As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
         {
             Day2 day2 = new Day2();
             return day2;
+        }
+        else if(position == 2)
+        {
+            Day3 day3 = new Day3();
+            return day3;
+        }
+        else if(position == 3)
+        {
+            Day4 day4 = new Day4();
+            return day4;
+        }
+        else
+        {
+            Day5 day5 = new Day5();
+            return day5;
         }
 
     }
