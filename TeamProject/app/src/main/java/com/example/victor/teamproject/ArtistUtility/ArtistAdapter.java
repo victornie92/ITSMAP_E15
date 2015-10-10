@@ -1,20 +1,36 @@
 package com.example.victor.teamproject.ArtistUtility;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.victor.teamproject.R;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 /**
- * Created by Anders on 08-10-2015.
+ * Build like FragmentsArnieMovies MovieAdapter
  */
 public class ArtistAdapter extends BaseAdapter {
 
     Context context;
     ArrayList<Artist> artists;
     Artist artist = null;
+
+    public ArtistAdapter(Context c,ArrayList<Artist> artistList){
+        artists = artistList;
+        context = c;
+    }
 
     @Override
     public int getCount() {
@@ -39,6 +55,54 @@ public class ArtistAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+
+        if(convertView == null){
+            LayoutInflater artistInflator = (LayoutInflater) this.context.
+                    getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = artistInflator.inflate(R.layout.artlistlist_artist, null);
+        }
+
+        artist = artists.get(position);
+        if(artist!=null){
+            TextView name = (TextView) convertView.findViewById(R.id.artist);
+            name.setText(artist.getName());
+
+            TextView describtion = (TextView) convertView.findViewById(R.id.preview);
+            describtion.setText(artist.getPreview());
+
+            TextView concertDate = (TextView) convertView.findViewById(R.id.concert);
+            concertDate.setText(artist.getConcertDate());
+
+            new ImageTask((ImageView) convertView.findViewById(R.id.artist_image)).execute(artist.getPicURL());
+        }
+        return convertView;
+    }
+
+    private class ImageTask extends AsyncTask<String, Void, Bitmap>{
+        ImageView bitmapImage;
+
+        public ImageTask(ImageView image){
+            bitmapImage = image;
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... params) {
+            String URL = params[0];
+            Bitmap picture = null;
+            try{
+                InputStream inputStream = new java.net.URL(URL).openStream();
+                picture = BitmapFactory.decodeStream(inputStream);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return picture;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            bitmapImage.setImageBitmap(bitmap);
+        }
     }
 }

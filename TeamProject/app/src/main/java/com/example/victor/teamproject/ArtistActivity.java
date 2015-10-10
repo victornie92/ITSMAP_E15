@@ -1,26 +1,54 @@
 package com.example.victor.teamproject;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.victor.teamproject.ArtistUtility.Artist;
 import com.example.victor.teamproject.ArtistUtility.ArtistListBuilder;
 
 import java.util.ArrayList;
 
+/**
+ * Build like FragmentsArnieMovies
+ */
+public class ArtistActivity extends FragmentActivity implements ArtistInterface {
 
-public class ArtistActivity extends AppCompatActivity implements ArtistInterface {
+    private ArrayList<Artist> artists;
+    private ArtistListFragment listFragment;
+    private ArtistFragment artistFragment;
+
+    private LinearLayout artistListContainer;
+    private LinearLayout artistContainer;
+
+    int currentArtist = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_artist);
+        setContentView(R.layout.multiplane_artist);
 
-        ArtistListBuilder potato = new ArtistListBuilder(this);
-        potato.getArtistList();
+        artistListContainer = (LinearLayout)findViewById(R.id.list_container);
+        artistContainer = (LinearLayout)findViewById(R.id.details_container);
+
+        artists = new ArtistListBuilder(this).getArtistList();
+
+        listFragment = new ArtistListFragment();
+        listFragment.setArtists(artists);
+
+        artistFragment = new ArtistFragment();
+        artistFragment.setArtist(artists.get(currentArtist));
+
+
+        getSupportFragmentManager().beginTransaction().
+                add(R.id.list_container, listFragment, "artist_list").
+                add(R.id.details_container, artistFragment, "artist").commit();
+        artistListContainer.setVisibility(View.VISIBLE);
+        artistContainer.setVisibility(View.GONE);
     }
 
     @Override
@@ -59,21 +87,28 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
 
     @Override
     public void onArtistSelected(int position) {
-
+        if(artistFragment!=null) {
+            Artist selectedArtist = artists.get(position);
+            if(selectedArtist!=null){
+                currentArtist = position;
+                artistFragment.setArtist(selectedArtist);
+            }
+        }
+        artistListContainer.setVisibility(View.GONE);
+        artistContainer.setVisibility(View.VISIBLE);
     }
 
     @Override
     public ArrayList<Artist> getArtistList() {
-        return null;
+        return artists;
     }
 
     @Override
     public Artist getCurrentArtist() {
-        return null;
+        if(artists!=null)
+            return artists.get(currentArtist);
+        else
+            return null;
     }
 
-    @Override
-    public void viewSpecial() {
-
-    }
 }

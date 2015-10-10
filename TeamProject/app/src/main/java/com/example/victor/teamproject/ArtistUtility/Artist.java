@@ -9,25 +9,27 @@ public class Artist {
 
     private String name;
     private String description;
+    private String preview;
     private String vidURL;
     private String picURL;
     private String concertDate;
 
-    public Artist(String artistName, String artistDiscribtion, String dateOfConcert, String videoURL, String pictureURL){
+    public Artist(String artistName, String artistShortDescription, String artistLongDescription, String dateOfConcert, String videoURL, String pictureURL){
 
         name = artistName;
-        description = artistDiscribtion;
+        preview = artistShortDescription;
+        description = artistLongDescription;
         concertDate = dateOfConcert;
         vidURL = videoURL;
         picURL = pictureURL;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getName() {
         return name;
+    }
+
+    public String getPreview() {
+        return preview;
     }
 
     public String getDescription() {
