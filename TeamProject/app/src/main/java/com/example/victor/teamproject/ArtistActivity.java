@@ -14,7 +14,7 @@ import com.example.victor.teamproject.ArtistUtility.ArtistListBuilder;
 import java.util.ArrayList;
 
 /**
- * Build like FragmentsArnieMovies
+ * Build like FragmentsArnieMovies (simpler)
  */
 public class ArtistActivity extends FragmentActivity implements ArtistInterface {
 

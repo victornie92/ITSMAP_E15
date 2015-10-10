@@ -49,7 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/date"
             android:layout_marginTop="25dp"
+            android:layout_alignParentLeft="true"
             android:text="Like artist"
+            android:textSize="10dp"
             style="?android:attr/borderlessButtonStyle"
             android:textColor="#19FA11"
             android:id="@+id/like"/>
@@ -65,12 +67,11 @@
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_below="@+id/header"
         android:textColor="#999"
         android:text="describtion"
         android:id="@+id/describtion"/>
-
 
 </RelativeLayout>
 </ScrollView>
