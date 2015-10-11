@@ -1,7 +1,5 @@
 package com.example.victor.teamproject.ArtistUtility;
 
-import java.util.Date;
-
 /**
  * Created by Anders on 08-10-2015.
  */

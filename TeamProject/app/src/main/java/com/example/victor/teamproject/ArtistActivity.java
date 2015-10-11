@@ -3,6 +3,7 @@ package com.example.victor.teamproject;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,9 +15,9 @@ import com.example.victor.teamproject.ArtistUtility.ArtistListBuilder;
 import java.util.ArrayList;
 
 /**
- * Build like FragmentsArnieMovies
+ * Build like FragmentsArnieMovies (simpler)
  */
-public class ArtistActivity extends FragmentActivity implements ArtistInterface {
+public class ArtistActivity extends AppCompatActivity implements ArtistInterface {
 
     private ArrayList<Artist> artists;
     private ArtistListFragment listFragment;
@@ -26,6 +27,7 @@ public class ArtistActivity extends FragmentActivity implements ArtistInterface 
     private LinearLayout artistContainer;
 
     int currentArtist = 0;
+    boolean hasSeletectedArtist = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,18 @@ public class ArtistActivity extends FragmentActivity implements ArtistInterface 
     }
 
     @Override
+    public void onBackPressed() {
+
+        if(hasSeletectedArtist){
+            artistListContainer.setVisibility(View.VISIBLE);
+            artistContainer.setVisibility(View.GONE);
+            hasSeletectedArtist = false;
+        } else{
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_artist, menu);
@@ -68,6 +82,12 @@ public class ArtistActivity extends FragmentActivity implements ArtistInterface 
             case R.id.menu_home:
                 startActivity(new Intent(ArtistActivity.this, MainActivity.class));
                 return true;
+<<<<<<< HEAD
+=======
+            case R.id.menu_artist:
+                //startActivity(new Intent(ArtistActivity.this, ArtistActivity.class));
+                return true;
+>>>>>>> origin/master
             case R.id.menu_map:
                 startActivity(new Intent(ArtistActivity.this, MapsActivity.class));
                 return true;
@@ -93,6 +113,7 @@ public class ArtistActivity extends FragmentActivity implements ArtistInterface 
         }
         artistListContainer.setVisibility(View.GONE);
         artistContainer.setVisibility(View.VISIBLE);
+        hasSeletectedArtist = true;
     }
 
     @Override

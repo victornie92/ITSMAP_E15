@@ -59,7 +59,7 @@ public class ArtistAdapter extends BaseAdapter {
         if(convertView == null){
             LayoutInflater artistInflator = (LayoutInflater) this.context.
                     getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = artistInflator.inflate(R.layout.artlistlist_artist, null);
+            convertView = artistInflator.inflate(R.layout.artistlist_artist_element, null);
         }
 
         artist = artists.get(position);

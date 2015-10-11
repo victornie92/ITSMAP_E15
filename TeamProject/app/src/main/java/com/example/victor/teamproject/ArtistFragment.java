@@ -2,6 +2,9 @@ package com.example.victor.teamproject;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,19 +12,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.example.victor.teamproject.ArtistUtility.Artist;
-import com.example.victor.teamproject.ArtistUtility.ArtistAdapter;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
+import java.util.Vector;
 
 /**
  * Created by Anders on 10-10-2015.
@@ -108,4 +109,5 @@ public class ArtistFragment extends Fragment {
             bitmapImage.setImageBitmap(bitmap);
         }
     }
+
 }

@@ -8,7 +8,9 @@ import android.location.LocationManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -47,6 +49,11 @@ public class MapsActivity extends FragmentActivity {
     private boolean showingToilet = false;
     private boolean showingInfo = false;
     private boolean showingFood = false;
+    private boolean infostate, toiletstate, foodstate = false;
+    int lowestRounded = 0;
+    String lowestRoundedAndName;
+
+
 
     private boolean tracing = false;
     private double userLatitude;
@@ -98,6 +105,7 @@ public class MapsActivity extends FragmentActivity {
                 new LatLng(userLatitude, userLongitude), 16.5f));
         setUpMap();*/
 
+
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             userLocationKnown = true;
@@ -147,10 +155,10 @@ public class MapsActivity extends FragmentActivity {
         showingInfo = true;
         if(infoLocations!=null && infoLocations.size()>0){
 
-            InfoLocation tempLocation;
+                    InfoLocation tempLocation;
 
-            for(int i=0; i<infoLocations.size(); i++) {
-                tempLocation = infoLocations.get(i);
+                    for(int i=0; i<infoLocations.size(); i++) {
+                        tempLocation = infoLocations.get(i);
 
                 //add markers
                 mMap.addMarker(new MarkerOptions()
@@ -221,14 +229,118 @@ public class MapsActivity extends FragmentActivity {
 
     public void nearestInfo(View v)
     {
-        double distance = 0;
+        if (userLatitude == 0 || userLongitude == 0) {
+            Toast.makeText(MapsActivity.this, "Please Locate your position", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            infostate = true;
+            calcDistance();
+        }
+
+    }
+
+    public void nearestRestaurant(View v)
+    {
+        if (userLatitude == 0 || userLongitude == 0) {
+            Toast.makeText(MapsActivity.this, "Please Locate your position", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            foodstate = true;
+            calcDistance();
+        }
+    }
+
+    public void nearestToilet(View v)
+    {
+        if (userLatitude == 0 || userLongitude == 0) {
+            Toast.makeText(MapsActivity.this, "Please Locate your position", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            toiletstate = true;
+            calcDistance();
+        }
+    }
+
+    public void calcDistance() {
+        if (infostate) {
+            if (infoLocations != null && infoLocations.size() > 0) {
+                InfoLocation tempLocation;
+
+                for (int i = 0; i < infoLocations.size(); i++) {
+                    tempLocation = infoLocations.get(i);
+                    double lat = tempLocation.getLatitude();
+                    double lon = tempLocation.getLongitude();
+                    String name = tempLocation.getName();
+
+                    //Calc for Info distance from user and returning lowest value (shortest way)
+                    findShortestWay(lat, lon, name);
+                }
+                showBox();
+                resetStats();
+            }
+        } else if (toiletstate) {
+            if (toiletLocations != null && toiletLocations.size() > 0) {
+                ToiletLocation tempLocation;
+
+                for (int i = 0; i < toiletLocations.size(); i++) {
+                    tempLocation = toiletLocations.get(i);
+                    double lat = tempLocation.getLatitude();
+                    double lon = tempLocation.getLongitude();
+                    String name = tempLocation.getName();
+
+                    //Calc for toilet distance from user and returning lowest value (shortest way)
+                    findShortestWay(lat, lon, name);
+
+                }
+                showBox();
+                resetStats();
+            }
+        } else
+        {
+            if (foodLocations != null && foodLocations.size() > 0) {
+                FoodLocation tempLocation;
+
+                for (int i = 0; i < foodLocations.size(); i++) {
+                    tempLocation = foodLocations.get(i);
+                    double lat = tempLocation.getLatitude();
+                    double lon = tempLocation.getLongitude();
+                    String name = tempLocation.getName();
+
+
+                    //Calc for restaurants distance from user and returning lowest value (shortest way)
+                    findShortestWay(lat,lon,name);
+                }
+                showBox();
+                resetStats();
+            }
+        }
+    }
+
+    public void showBox ()
+    {
+        AlertDialog alertDialog;
+        alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        TextView myMsg = new TextView(this);
+        myMsg.setText(lowestRoundedAndName);
+        myMsg.setTextSize(20);
+        myMsg.setGravity(Gravity.CENTER_HORIZONTAL);
+        alertDialog.setView(myMsg, 0, 30, 0, 0);
+        alertDialog.show();
+    }
+
+
+
+    public void findShortestWay(double lat, double lon, String name)
+    {
+        double distance;
 
         Location locationA = new Location("A");
         locationA.setLatitude(userLatitude);
         locationA.setLongitude(userLongitude);
         Location locationB = new Location("B");
-        locationB.setLatitude(56.147588);
-        locationB.setLongitude(10.174182);
+        locationB.setLatitude(lat);
+        locationB.setLongitude(lon);
 
         //Distance er angivet i meter
         distance = locationA.distanceTo(locationB);
@@ -239,23 +351,21 @@ public class MapsActivity extends FragmentActivity {
         //Afrunding til nærmeste 10'er
         int rounded = i % 10 > 5 ? ((i/10)*10)+10 : (i/10)*10;
 
-        String das = Integer.toString(rounded);
-
-
-        Toast.makeText(MapsActivity.this,das + " Meter",Toast.LENGTH_SHORT).show();
-
+        if(lowestRounded == 0 || rounded <=lowestRounded)
+        {
+            lowestRounded=rounded;
+            lowestRoundedAndName = Integer.toString(rounded)+ " Meter from "+ name;
+        }
     }
 
-    public void nearestRestaurant(View v)
+    public void resetStats()
     {
-        //Empty
+        toiletstate = false;
+        foodstate = false;
+        infostate = false;
+        lowestRounded = 0;
+        lowestRoundedAndName = null;
     }
-
-    public void nearestToilet(View v)
-    {
-        //Empty
-    }
-
 
 
     private void setUpMapIfNeeded() {
