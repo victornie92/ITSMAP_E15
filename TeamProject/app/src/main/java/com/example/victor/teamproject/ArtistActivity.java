@@ -3,6 +3,7 @@ package com.example.victor.teamproject;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 /**
  * Build like FragmentsArnieMovies (simpler)
  */
-public class ArtistActivity extends FragmentActivity implements ArtistInterface {
+public class ArtistActivity extends AppCompatActivity implements ArtistInterface {
 
     private ArrayList<Artist> artists;
     private ArtistListFragment listFragment;
@@ -82,7 +83,7 @@ public class ArtistActivity extends FragmentActivity implements ArtistInterface 
                 startActivity(new Intent(ArtistActivity.this, MainActivity.class));
                 return true;
             case R.id.menu_artist:
-                startActivity(new Intent(ArtistActivity.this, ArtistActivity.class));
+                //startActivity(new Intent(ArtistActivity.this, ArtistActivity.class));
                 return true;
             case R.id.menu_map:
                 startActivity(new Intent(ArtistActivity.this, MapsActivity.class));
