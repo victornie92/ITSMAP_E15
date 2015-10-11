@@ -109,4 +109,5 @@ public class ArtistFragment extends Fragment {
             bitmapImage.setImageBitmap(bitmap);
         }
     }
+
 }

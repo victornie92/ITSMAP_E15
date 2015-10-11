@@ -26,6 +26,7 @@ public class ArtistActivity extends FragmentActivity implements ArtistInterface 
     private LinearLayout artistContainer;
 
     int currentArtist = 0;
+    boolean hasSeletectedArtist = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,18 @@ public class ArtistActivity extends FragmentActivity implements ArtistInterface 
                 add(R.id.details_container, artistFragment, "artist").commit();
         artistListContainer.setVisibility(View.VISIBLE);
         artistContainer.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(hasSeletectedArtist){
+            artistListContainer.setVisibility(View.VISIBLE);
+            artistContainer.setVisibility(View.GONE);
+            hasSeletectedArtist = false;
+        } else{
+            super.onBackPressed();
+        }
     }
 
     @Override
@@ -96,6 +109,7 @@ public class ArtistActivity extends FragmentActivity implements ArtistInterface 
         }
         artistListContainer.setVisibility(View.GONE);
         artistContainer.setVisibility(View.VISIBLE);
+        hasSeletectedArtist = true;
     }
 
     @Override
