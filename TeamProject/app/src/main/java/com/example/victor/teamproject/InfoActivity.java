@@ -1,18 +1,54 @@
 package com.example.victor.teamproject;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListPopupWindow;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.Toolbar;
+
+import java.util.List;
 
 public class InfoActivity extends AppCompatActivity {
+
+    ListView infoList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
+
+        infoList = (ListView)findViewById(R.id.info_list);
+        String[] info = {"Køb billet", "Kontakt"};
+
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, info);
+        infoList.setAdapter(adapter);
+
+        infoList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String buyTicket = "Køb din billet - 1500 kr";
+                String info = "Northside 2016, 8200, Aarhus N";
+
+                Toast.makeText(InfoActivity.this, buyTicket, Toast.LENGTH_LONG).show();
+                Toast.makeText(InfoActivity.this, info, Toast.LENGTH_LONG).show();
+
+
+            }
+        });
+
     }
 
     @Override
@@ -40,9 +76,6 @@ public class InfoActivity extends AppCompatActivity {
                 return true;
             case R.id.menu_calender:
                 startActivity(new Intent(InfoActivity.this, CalenderActivity.class));
-                return true;
-            case R.id.menu_info:
-                startActivity(new Intent(InfoActivity.this, InfoActivity.class));
                 return true;
         }
 

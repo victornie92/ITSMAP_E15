@@ -68,9 +68,6 @@ public class ArtistActivity extends FragmentActivity implements ArtistInterface 
             case R.id.menu_home:
                 startActivity(new Intent(ArtistActivity.this, MainActivity.class));
                 return true;
-            case R.id.menu_artist:
-                startActivity(new Intent(ArtistActivity.this, ArtistActivity.class));
-                return true;
             case R.id.menu_map:
                 startActivity(new Intent(ArtistActivity.this, MapsActivity.class));
                 return true;

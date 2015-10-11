@@ -31,13 +31,18 @@ public class MainActivity extends AppCompatActivity {
     Context context = this;
     WeatherService weatherService;
     boolean serviceBound = false;
+    TextView welcomeTxt;
+    String text_welcome = "Velkommen til Northside 2016." +
+            "Dette er app'en som gør det hele muligt!";
 
-   /* @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnUpdate = (Button)findViewById(R.id.btnUpdate);
+        welcomeTxt = (TextView)findViewById(R.id.welcomeText);
+        welcomeTxt.setText(text_welcome);
+        /*btnUpdate = (Button)findViewById(R.id.btnUpdate);
         temperatureValue = (TextView)findViewById(R.id.tempValue);
 
         btnUpdate.setOnClickListener(new View.OnClickListener(){
@@ -89,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceDisconnected(ComponentName name) {
             serviceBound = false;
-        }
-    };*/
+        }*/
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -106,9 +111,6 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId())
         {
-            case R.id.menu_home:
-                startActivity(new Intent(MainActivity.this, MainActivity.class));
-                return true;
             case R.id.menu_artist:
                 startActivity(new Intent(MainActivity.this, ArtistActivity.class));
                 return true;
