@@ -2,9 +2,6 @@ package com.example.victor.teamproject;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,14 +12,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.VideoView;
+import android.widget.Toast;
 
 import com.example.victor.teamproject.ArtistUtility.Artist;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
-import java.util.Vector;
 
 /**
  * Created by Anders on 10-10-2015.
@@ -58,7 +54,8 @@ public class ArtistFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(getActivity(), "Liked " + currentArtist.getName(),
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -81,7 +78,7 @@ public class ArtistFragment extends Fragment {
             setArtist(selectorInterface.getCurrentArtist());
     }
 
-
+    //Get image from the internet through an AsyncTask
     private class ImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bitmapImage;
 
@@ -93,6 +90,7 @@ public class ArtistFragment extends Fragment {
         protected Bitmap doInBackground(String... params) {
             String URL = params[0];
             Bitmap picture = null;
+            //Try to get the picture from provided URL
             try{
                 InputStream inputStream = new java.net.URL(URL).openStream();
                 picture = BitmapFactory.decodeStream(inputStream);
@@ -104,6 +102,7 @@ public class ArtistFragment extends Fragment {
             return picture;
         }
 
+        //Set the picture to received bitmap.
         @Override
         protected void onPostExecute(Bitmap bitmap) {
             bitmapImage.setImageBitmap(bitmap);

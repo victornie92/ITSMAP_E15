@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class ArtistListBuilder {
 
-    Activity activity;
+    private Activity activity;
 
 
     public ArtistListBuilder(Activity currentActivity){
@@ -29,10 +29,12 @@ public class ArtistListBuilder {
         //Get JSONobject
         JSONObject data;
         try{
-            String response = loadJSON();
+            String response = loadJSON(); //pretend we make an HTTPrequest
             data = new JSONObject(response);
+            //get the array with our artists, possible other data get sended from server too
             JSONArray artistArray = data.getJSONArray("artists");
 
+            //make artist object with information and store in artistArray
             for(int i=0; i < artistArray.length();i++){
                 JSONObject artist = artistArray.getJSONObject(i);
                 tmp = new Artist(artist.getString("name"),artist.getString("descriptionShort"),

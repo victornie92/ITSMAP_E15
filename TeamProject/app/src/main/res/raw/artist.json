@@ -24,6 +24,12 @@
     "videoURL": "https://www.youtube.com/watch?v=yMqL1iWfku4",
     "picUrl": "http://i.imgur.com/CmWn9Na.jpg",
     "concertDate": "Day 3"
+  },
+
+  {
+    "name": "Drake",
+    "descriptionShort": "This fearsome creature is summoned from the legends Chinese mythology",
+    "descriptionLong": "A truly fearsome creature spawned from several different mythologies, but most notable Chinese mythology. It is s"
   }
 
 ]
