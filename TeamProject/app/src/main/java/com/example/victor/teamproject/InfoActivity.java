@@ -1,54 +1,45 @@
 package com.example.victor.teamproject;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListAdapter;
-import android.widget.ListPopupWindow;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
-import java.util.List;
-
+/**
+ * Created by Victor on 12-10-2015.
+ */
 public class InfoActivity extends AppCompatActivity {
 
-    ListView infoList;
+    ViewPager pager;
+    ViewInfoAdapter adapter;
+    SlidingTabLayout tabs;
+    CharSequence info[] = {"Buy Ticket", "Concat"};
+    int numbOfinfo = 2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        infoList = (ListView)findViewById(R.id.info_list);
-        String[] info = {"Køb billet", "Kontakt"};
+        adapter = new ViewInfoAdapter(getSupportFragmentManager(), info, numbOfinfo);
 
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, info);
-        infoList.setAdapter(adapter);
+        pager = (ViewPager)findViewById(R.id.pager);
+        pager.setAdapter(adapter);
 
-        infoList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        tabs = (SlidingTabLayout)findViewById(R.id.tabs);
+        tabs.setDistributeEvenly(true);
+
+        tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer()
+        {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                String buyTicket = "Køb din billet - 1500 kr";
-                String info = "Northside 2016, 8200, Aarhus N";
-
-                Toast.makeText(InfoActivity.this, buyTicket, Toast.LENGTH_LONG).show();
-                Toast.makeText(InfoActivity.this, info, Toast.LENGTH_LONG).show();
-
-
+            public int getIndicatorColor(int position){
+                return getResources().getColor(R.color.tabsScrollColor);
             }
-        });
 
+        });
+        tabs.setViewPager(pager);
     }
 
     @Override
@@ -63,8 +54,7 @@ public class InfoActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.menu_home:
                 startActivity(new Intent(InfoActivity.this, MainActivity.class));
                 return true;

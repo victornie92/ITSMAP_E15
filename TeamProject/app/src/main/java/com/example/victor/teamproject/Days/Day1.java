@@ -1,4 +1,4 @@
-package com.example.victor.teamproject;
+package com.example.victor.teamproject.Days;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.victor.teamproject.R;
 
 /**
  * Created by Victor on 08-10-2015.
@@ -19,7 +21,7 @@ public class Day1 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v =inflater.inflate(R.layout.day_1,container,false);
+        View v = inflater.inflate(R.layout.day_1,container,false);
 
         myListViewDay1 = (ListView) v.findViewById(R.id.day1_listView);
 

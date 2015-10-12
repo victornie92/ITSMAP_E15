@@ -82,12 +82,6 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
             case R.id.menu_home:
                 startActivity(new Intent(ArtistActivity.this, MainActivity.class));
                 return true;
-<<<<<<< HEAD
-=======
-            case R.id.menu_artist:
-                //startActivity(new Intent(ArtistActivity.this, ArtistActivity.class));
-                return true;
->>>>>>> origin/master
             case R.id.menu_map:
                 startActivity(new Intent(ArtistActivity.this, MapsActivity.class));
                 return true;

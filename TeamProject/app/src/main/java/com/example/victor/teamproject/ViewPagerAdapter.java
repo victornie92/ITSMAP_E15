@@ -4,6 +4,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.example.victor.teamproject.Days.Day1;
+import com.example.victor.teamproject.Days.Day2;
+import com.example.victor.teamproject.Days.Day3;
+import com.example.victor.teamproject.Days.Day4;
+import com.example.victor.teamproject.Days.Day5;
+
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     CharSequence Titles[];
