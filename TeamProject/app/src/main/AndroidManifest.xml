@@ -44,10 +44,6 @@
         </activity>
 
         <meta-data
-            android:name="http://api.openweathermap.org/data/2.5/weather?q="
-            android:value="e811d8c7f975fd0c90bb2549468cdbda"/>
-
-        <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <meta-data

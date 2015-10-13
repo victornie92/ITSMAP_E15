@@ -26,11 +26,6 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnUpdate;
-    TextView temperatureValue;
-    Context context = this;
-    WeatherService weatherService;
-    boolean serviceBound = false;
     TextView welcomeTxt;
     String text_welcome = "Welcome to Northside 2016." +
             "This is the app, witch makes it alle possible!";
@@ -42,60 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
         welcomeTxt = (TextView)findViewById(R.id.welcomeText);
         welcomeTxt.setText(text_welcome);
- /*       btnUpdate = (Button)findViewById(R.id.btnUpdate);
-        temperatureValue = (TextView)findViewById(R.id.tempValue);
 
-        btnUpdate.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                if(serviceBound)
-                {
-                    if (btnUpdate.getText().toString().equals("Update")) {
-                        LocalBroadcastManager.getInstance(context).registerReceiver(
-                                weatherUpdateReceiver, new IntentFilter("WeatherUpdate"));
-                        btnUpdate.setText("UnUpdate");
-                    }
-                    else if (btnUpdate.getText().toString().equals("UnUpdate")){
-                        LocalBroadcastManager.getInstance(context).unregisterReceiver(
-                                weatherUpdateReceiver);
-                        btnUpdate.setText("Update");
-                    }
-                    else{
-                        btnUpdate.setText("Program fail");
-                    }
-                }
-            }
-        });*/
     }
 
-  /*  @Override
-    protected void onStart(){
-        super.onStart();
-        Intent i = new Intent(MainActivity.this, WeatherService.class);
-        bindService(i, serviceConnection, Context.BIND_AUTO_CREATE);
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        if(serviceBound){
-            unbindService(serviceConnection);
-        }
-    }
-
-    private ServiceConnection serviceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            WeatherService.LocalWeatherBinder binder = (WeatherService.LocalWeatherBinder) service;
-            weatherService = binder.getService();
-            serviceBound = true;
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            serviceBound = false;
-        }
-    };*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -128,10 +72,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private BroadcastReceiver weatherUpdateReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            temperatureValue.setText(intent.getStringExtra("Temperature"));
-        }
-    };
 }

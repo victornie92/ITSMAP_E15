@@ -15,7 +15,7 @@ public class InfoActivity extends AppCompatActivity {
     ViewPager pager;
     ViewInfoAdapter adapter;
     SlidingTabLayout tabs;
-    CharSequence info[] = {"Buy Ticket", "Concat"};
+    CharSequence info[] = {"Buy Ticket", "Contcat"};
     int numbOfinfo = 2;
 
     @Override
