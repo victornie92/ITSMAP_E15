@@ -1,5 +1,7 @@
 package com.example.victor.teamproject;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.victor.teamproject.ArtistUtility.Artist;
+import com.example.victor.teamproject.DatabaseUtility.DatabaseHelper;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,6 +34,7 @@ public class ArtistFragment extends Fragment {
     private ImageView artistPicture;
 
     private ArtistInterface selectorInterface;
+    private DatabaseHelper dbHelper;
 
     public ArtistFragment(){
     }
@@ -48,12 +52,20 @@ public class ArtistFragment extends Fragment {
 
         updateArtist();
 
+
+        dbHelper = new DatabaseHelper(getContext(),"ArtistDataBase",4);
+
         likeBtn = (Button) view.findViewById(R.id.like);
 
         likeBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                ContentValues dbValues = new ContentValues();
+                dbValues.put("artistname",currentArtist.getName());
+                dbValues.put("date",currentArtist.getConcertDate());
+                db.insert("likedartists",null,dbValues);
                 Toast.makeText(getActivity(), "Liked " + currentArtist.getName(),
                         Toast.LENGTH_SHORT).show();
             }
@@ -70,6 +82,7 @@ public class ArtistFragment extends Fragment {
             describtion.setText(artist.getDescription());
 
             new ImageTask(artistPicture).execute(artist.getPicURL());
+            currentArtist = artist;
         }
     }
 

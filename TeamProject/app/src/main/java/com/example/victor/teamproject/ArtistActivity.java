@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 
 import com.example.victor.teamproject.ArtistUtility.Artist;
 import com.example.victor.teamproject.ArtistUtility.ArtistListBuilder;
+import com.example.victor.teamproject.DatabaseUtility.DatabaseHelper;
 
 import java.util.ArrayList;
 

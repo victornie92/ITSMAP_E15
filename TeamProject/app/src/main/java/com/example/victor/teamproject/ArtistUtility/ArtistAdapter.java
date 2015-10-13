@@ -56,12 +56,14 @@ public class ArtistAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        //Make an inflater so we can inflate the list view.
         if(convertView == null){
             LayoutInflater artistInflator = (LayoutInflater) this.context.
                     getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = artistInflator.inflate(R.layout.artistlist_artist_element, null);
         }
 
+        //Fill with our information for artists
         artist = artists.get(position);
         if(artist!=null){
             TextView name = (TextView) convertView.findViewById(R.id.artist);
@@ -73,6 +75,7 @@ public class ArtistAdapter extends BaseAdapter {
             TextView concertDate = (TextView) convertView.findViewById(R.id.concert);
             concertDate.setText(artist.getConcertDate());
 
+            //Start asynctask to get picture from internet for us
             new ImageTask((ImageView) convertView.findViewById(R.id.artist_image)).execute(artist.getPicURL());
         }
         return convertView;
