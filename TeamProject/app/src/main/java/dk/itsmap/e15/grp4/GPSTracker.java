@@ -1,6 +1,9 @@
 package dk.itsmap.e15.grp4;
 
 //Code inspiration from: Kasper's arnie example
+/**
+ * Created by Peter-PC on 08-10-2015.
+ */
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
