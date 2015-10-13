@@ -32,7 +32,8 @@
         </activity>
         <activity
             android:name="dk.itsmap.e15.grp4.ArtistActivity"
-            android:label="@string/northside" >
+            android:label="@string/northside"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="dk.itsmap.e15.grp4.CalenderActivity"

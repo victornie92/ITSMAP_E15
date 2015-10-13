@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/ColorBlack">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/ColorBlack"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="5dp"
+                android:weightSum="10"
+                android:id="@+id/header">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Artist"
+                    android:textSize="35dp"
+                    android:textColor="#FF66CC"
+                    android:layout_gravity="left"
+                    android:id="@+id/artist_name"
+                    android:layout_weight="10"
+                    />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/artist_name"
+                    android:text="concertDate"
+                    android:textSize="15dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#CC6600"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/date"
+                    android:layout_marginTop="25dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="Like artist"
+                    android:textSize="10dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:textColor="#19FA11"
+                    android:id="@+id/like"/>
+
+                <ImageView
+                    android:layout_width="150dip"
+                    android:layout_height="150dip"
+
+                    android:id="@+id/artist_image"
+                    android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/header"
+                android:textColor="#999"
+                android:text="describtion"
+                android:id="@+id/describtion"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
