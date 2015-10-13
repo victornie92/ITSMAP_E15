@@ -6,7 +6,7 @@
     android:onClick="nearestInfo"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context="com.example.victor.teamproject.MapsActivity">
+    tools:context="dk.itsmap.e15.grp4.MapsActivity">
 
     <fragment
         android:id="@+id/map"

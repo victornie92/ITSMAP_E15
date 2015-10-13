@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.victor.teamproject" >
+    package="dk.itsmap.e15.grp4" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".MainActivity"
+            android:name="dk.itsmap.e15.grp4.MainActivity"
             android:label="@string/northside"
             android:screenOrientation="portrait">
 
@@ -31,14 +31,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ArtistActivity"
+            android:name="dk.itsmap.e15.grp4.ArtistActivity"
             android:label="@string/northside" >
         </activity>
         <activity
-            android:name=".CalenderActivity"
+            android:name="dk.itsmap.e15.grp4.CalenderActivity"
             android:label="@string/northside" >
         </activity>
-        <activity android:name=".InfoActivity"
+        <activity android:name="dk.itsmap.e15.grp4.InfoActivity"
             android:label="@string/northside">
         </activity>
 
@@ -50,7 +50,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name="dk.itsmap.e15.grp4.MapsActivity"
             android:label="@string/title_activity_maps"
             android:screenOrientation="portrait">
         </activity>

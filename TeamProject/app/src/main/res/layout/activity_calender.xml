@@ -4,9 +4,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/festival_logo"
     android:orientation="vertical"
-    tools:context="com.example.victor.teamproject.CalenderActivity">
+    tools:context="dk.itsmap.e15.grp4.CalenderActivity">
 
-    <com.example.victor.teamproject.SlidingTabLayout
+    <dk.itsmap.e15.grp4.SlidingTabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

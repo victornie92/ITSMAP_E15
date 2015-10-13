@@ -2,7 +2,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/ColorBlack">
 <ScrollView
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -10,7 +11,7 @@
 <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#000000"
+    android:background="@color/ColorBlack"
     android:orientation="horizontal"
     android:padding="5dip" >
 

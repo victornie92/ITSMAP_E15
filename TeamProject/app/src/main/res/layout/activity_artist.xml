@@ -7,13 +7,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/festival_logo"
-    tools:context="com.example.victor.teamproject.ArtistActivity"
+    tools:context="dk.itsmap.e15.grp4.ArtistActivity"
     tools:ignore="MergeRootFrame">
 
     <fragment
         android:id="@+id/artistListFragment"
-        android:name="com.example.victor.teamproject.ArtistListFragment"
-        class="com.example.victor.teamproject.ArtistListFragment"
+        android:name="dk.itsmap.e15.grp4.ArtistListFragment"
+        class="dk.itsmap.e15.grp4.ArtistListFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/artistFragment"
-        android:name="com.example.victor.teamproject.ArtistFragment"
+        android:name="dk.itsmap.e15.grp4.ArtistFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
