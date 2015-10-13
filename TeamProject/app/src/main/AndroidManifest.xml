@@ -38,7 +38,7 @@
             android:label="@string/northside" >
         </activity>
         <activity android:name=".InfoActivity"
-            android:label="@string/info">
+            android:label="@string/northside">
         </activity>
 
         <meta-data

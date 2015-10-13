@@ -1,4 +1,4 @@
-package com.example.victor.teamproject;
+package com.example.victor.teamproject.Info;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

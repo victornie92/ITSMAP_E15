@@ -4,6 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.example.victor.teamproject.Info.Contacts_info;
+import com.example.victor.teamproject.Info.buyTicket_info;
+
 /**
  * Created by Victor on 12-10-2015.
  */
