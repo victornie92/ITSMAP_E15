@@ -1,5 +1,6 @@
 package dk.itsmap.e15.grp4.model;
 
+//Inspiration af Kaspers arnie exercise example
 /**
  * Created by Peter-PC on 08-10-2015.
  */

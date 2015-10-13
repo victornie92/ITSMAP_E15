@@ -1,5 +1,6 @@
 package dk.itsmap.e15.grp4.util;
 
+//Inspiration af Kaspers arnie exercise example
 import android.app.Activity;
 import android.util.Log;
 

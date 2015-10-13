@@ -1,5 +1,9 @@
 package dk.itsmap.e15.grp4;
 
+//Inspiration af: Kaspers arnie exercise example
+//Inspiration af: http://stackoverflow.com/questions/30103562/enabling-gps-in-android
+//Inspiration af: http://stackoverflow.com/questions/8049612/calculating-distance-between-two-geographic-locations
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -142,7 +146,7 @@ public class MapsActivity extends FragmentActivity {
                         dialog.cancel();
                     }
                 });
-        alertDialogBuilder.setIcon(R.mipmap.ic_launcher);
+        alertDialogBuilder.setIcon(R.mipmap.gps);
         alertDialogBuilder.setTitle("Alert");
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
