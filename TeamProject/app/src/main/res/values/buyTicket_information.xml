@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="butTicket_information">
+        <item>
+            To buy a ticket see our website for more information
+        </item>
+    </string-array>
+</resources>

@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     WeatherService weatherService;
     boolean serviceBound = false;
     TextView welcomeTxt;
-    String text_welcome = "Velkommen til Northside 2016." +
-            "Dette er app'en som gør det hele muligt!";
+    String text_welcome = "Welcome to Northside 2016." +
+            "This is the app, witch makes it alle possible!";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         welcomeTxt = (TextView)findViewById(R.id.welcomeText);
         welcomeTxt.setText(text_welcome);
-        /*btnUpdate = (Button)findViewById(R.id.btnUpdate);
+ /*       btnUpdate = (Button)findViewById(R.id.btnUpdate);
         temperatureValue = (TextView)findViewById(R.id.tempValue);
 
         btnUpdate.setOnClickListener(new View.OnClickListener(){
@@ -65,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
-        });
+        });*/
     }
 
-    @Override
+  /*  @Override
     protected void onStart(){
         super.onStart();
         Intent i = new Intent(MainActivity.this, WeatherService.class);
@@ -94,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceDisconnected(ComponentName name) {
             serviceBound = false;
-        }*/
-    };
+        }
+    };*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -91,7 +91,7 @@ public class ArtistFragment extends Fragment {
             setArtist(selectorInterface.getCurrentArtist());
     }
 
-    //Get image from the internet through an AsyncTask
+
     private class ImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bitmapImage;
 
@@ -103,7 +103,6 @@ public class ArtistFragment extends Fragment {
         protected Bitmap doInBackground(String... params) {
             String URL = params[0];
             Bitmap picture = null;
-            //Try to get the picture from provided URL
             try{
                 InputStream inputStream = new java.net.URL(URL).openStream();
                 picture = BitmapFactory.decodeStream(inputStream);
@@ -115,7 +114,6 @@ public class ArtistFragment extends Fragment {
             return picture;
         }
 
-        //Set the picture to received bitmap.
         @Override
         protected void onPostExecute(Bitmap bitmap) {
             bitmapImage.setImageBitmap(bitmap);

@@ -22,7 +22,9 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/northside" >
+            android:label="@string/northside"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,10 +39,13 @@
             android:name=".CalenderActivity"
             android:label="@string/northside" >
         </activity>
-        <activity
-            android:name=".InfoActivity"
-            android:label="@string/northside" >
+        <activity android:name=".InfoActivity"
+            android:label="@string/northside">
         </activity>
+
+        <meta-data
+            android:name="http://api.openweathermap.org/data/2.5/weather?q="
+            android:value="e811d8c7f975fd0c90bb2549468cdbda"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -51,7 +56,8 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" >
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

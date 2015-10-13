@@ -26,7 +26,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.11"
             android:onClick="LocateMe"
-            android:text="Locate Me" />
+            android:text="Locate Me"
+            android:textColor="@color/ButtonText"
+            android:background="@color/ButtonColor"/>
     </LinearLayout>
 
     <LinearLayout
@@ -40,7 +42,8 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:onClick="findInfo"
-            android:text="Find Info" />
+            android:text="Find Info"
+            />
 
         <Button
             android:id="@+id/btnFood"
@@ -48,7 +51,8 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:onClick="findFood"
-            android:text="Find food" />
+            android:text="Find food"
+            />
 
         <Button
             android:id="@+id/btnFindToilets"

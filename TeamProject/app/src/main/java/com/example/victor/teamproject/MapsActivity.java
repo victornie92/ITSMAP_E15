@@ -324,8 +324,11 @@ public class MapsActivity extends FragmentActivity {
         TextView myMsg = new TextView(this);
         myMsg.setText(lowestRoundedAndName);
         myMsg.setTextSize(20);
+        myMsg.setTextColor(getResources().getColor(R.color.ButtonText));
+        myMsg.setBackgroundColor(getResources().getColor(R.color.Grey));
         myMsg.setGravity(Gravity.CENTER_HORIZONTAL);
         alertDialog.setView(myMsg, 0, 30, 0, 0);
+        alertDialog.getWindow().setBackgroundDrawableResource(R.color.Grey);
         alertDialog.show();
     }
 

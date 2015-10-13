@@ -1,6 +1,7 @@
 package com.example.victor.teamproject;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -45,27 +46,22 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
         artistFragment = new ArtistFragment();
         artistFragment.setArtist(artists.get(currentArtist));
 
-        //Tell FragmentManager which fragments, to work with
+
         getSupportFragmentManager().beginTransaction().
-            add(R.id.list_container, listFragment, "artist_list").
-            add(R.id.details_container, artistFragment, "artist").
-            commit();
-        //Show artistlist, but not artist
+                add(R.id.list_container, listFragment, "artist_list").
+                add(R.id.details_container, artistFragment, "artist").commit();
         artistListContainer.setVisibility(View.VISIBLE);
         artistContainer.setVisibility(View.GONE);
     }
 
-    //Handle if user presses back, so artistview goes back to artistlistview.
     @Override
     public void onBackPressed() {
-        //If artist is open
+
         if(hasSeletectedArtist){
-            //go back to showing artistlist
             artistListContainer.setVisibility(View.VISIBLE);
             artistContainer.setVisibility(View.GONE);
             hasSeletectedArtist = false;
         } else{
-            //back to whatever was before artistlist was opened
             super.onBackPressed();
         }
     }
@@ -77,7 +73,6 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
         return true;
     }
 
-    //Option menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -87,9 +82,6 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
         {
             case R.id.menu_home:
                 startActivity(new Intent(ArtistActivity.this, MainActivity.class));
-                return true;
-            case R.id.menu_artist:
-                //startActivity(new Intent(ArtistActivity.this, ArtistActivity.class));
                 return true;
             case R.id.menu_map:
                 startActivity(new Intent(ArtistActivity.this, MapsActivity.class));
