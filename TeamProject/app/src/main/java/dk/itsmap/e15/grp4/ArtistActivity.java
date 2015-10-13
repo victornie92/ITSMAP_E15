@@ -11,8 +11,6 @@ import android.widget.LinearLayout;
 import dk.itsmap.e15.grp4.ArtistUtility.Artist;
 import dk.itsmap.e15.grp4.ArtistUtility.ArtistListBuilder;
 
-import dk.itsmap.e15.grp4.R;
-
 import java.util.ArrayList;
 
 /**
@@ -35,8 +33,8 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
         super.onCreate(savedInstanceState);
         setContentView(R.layout.multiplane_artist);
 
-        artistListContainer = (LinearLayout)findViewById(R.id.list_container);
-        artistContainer = (LinearLayout)findViewById(R.id.details_container);
+        artistListContainer = (LinearLayout)findViewById(R.id.list_view);
+        artistContainer = (LinearLayout)findViewById(R.id.artist_view);
 
         artists = new ArtistListBuilder(this).getArtistList();
 
@@ -48,8 +46,8 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
 
 
         getSupportFragmentManager().beginTransaction().
-                add(R.id.list_container, listFragment, "artist_list").
-                add(R.id.details_container, artistFragment, "artist").commit();
+                add(R.id.list_view, listFragment, "artist_list").
+                add(R.id.artist_view, artistFragment, "artist").commit();
         artistListContainer.setVisibility(View.VISIBLE);
         artistContainer.setVisibility(View.GONE);
     }
