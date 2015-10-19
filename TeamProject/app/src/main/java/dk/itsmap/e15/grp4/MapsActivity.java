@@ -99,15 +99,17 @@ public class MapsActivity extends FragmentActivity {
 
     public void LocateMe(View v)
     {
-        //Mock for testing
-        /*userLatitude = 56.149070;
+
+        //Default location in northside festival
+        userLatitude = 56.149070;
         userLongitude = 10.173088;
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                 new LatLng(userLatitude, userLongitude), 16.5f));
-        setUpMap();*/
+        setUpMap();
 
 
+        /*
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             userLocationKnown = true;
@@ -126,6 +128,7 @@ public class MapsActivity extends FragmentActivity {
                 userLocationKnown = false;
                 showGPSAlert();
             }
+            */
         }
 
     private void showGPSAlert(){
