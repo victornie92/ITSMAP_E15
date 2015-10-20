@@ -37,7 +37,7 @@ public class ArtistListFragment extends Fragment {
         View view = inflater.inflate(R.layout.artistlist,container,false);
 
         artistListView = (ListView) view.findViewById(R.id.listView);
-        updateMovies();
+        updateArtists();
 
         return view;
     }
@@ -63,7 +63,7 @@ public class ArtistListFragment extends Fragment {
         artists = (ArrayList<Artist>) artistslist.clone();
     }
 
-    private void updateMovies() {
+    private void updateArtists() {
         if(selectorInterface != null)
             artists = selectorInterface.getArtistList();
         if(artists!=null){
