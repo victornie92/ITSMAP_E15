@@ -1,4 +1,5 @@
-{"artists":[
+{
+  "artists":[
   {
     "name": "SNSD",
     "descriptionShort": "Korea's girl group",
@@ -25,5 +26,33 @@
     "picUrl": "http://i.imgur.com/CmWn9Na.jpg",
     "concertDate": "Day 3"
   }
+  ],
+
+  "schedule":[
+    {
+      "date": "day1",
+      "artists":["SNSD","Drake","Potato"]
+    },
+
+    {
+      "date": "day2",
+      "artists":["IU","Drake","Potato"]
+    },
+
+    {
+      "date": "day3",
+      "artists":["Day3","Drake","Potato"]
+    },
+
+    {
+      "date": "day4",
+      "artists":["Day4"]
+    },
+
+    {
+      "date": "day5",
+      "artists":["Day5"]
+    }
+
   ]
 }
