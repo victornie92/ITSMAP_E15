@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.example.victor.teamproject"
+        applicationId "dk.itsmap.e15.grp4"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
