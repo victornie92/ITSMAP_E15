@@ -118,7 +118,11 @@ public class ArtistFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Bitmap bitmap) {
-            bitmapImage.setImageBitmap(bitmap);
+            if (bitmap !=null) {
+                bitmapImage.setImageBitmap(bitmap);
+            } else {
+
+            }
         }
     }
 

@@ -27,6 +27,7 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
 
     int currentArtist = 0;
     boolean hasSeletectedArtist = false;
+    boolean landScape = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,27 +39,49 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
 
         artists = new ArtistListBuilder(this).getArtistList();
 
-        listFragment = new ArtistListFragment();
-        listFragment.setArtists(artists);
+        if (savedInstanceState==null) {
+            listFragment = new ArtistListFragment();
+            listFragment.setArtists(artists);
 
-        artistFragment = new ArtistFragment();
-        artistFragment.setArtist(artists.get(currentArtist));
+            artistFragment = new ArtistFragment();
+            artistFragment.setArtist(artists.get(currentArtist));
 
+            getSupportFragmentManager().beginTransaction().
+                    add(R.id.list_view, listFragment, "artist_list").
+                    add(R.id.artist_view, artistFragment, "artist").commit();
+            artistListContainer.setVisibility(View.VISIBLE);
+            artistContainer.setVisibility(View.GONE);
 
-        getSupportFragmentManager().beginTransaction().
-                add(R.id.list_view, listFragment, "artist_list").
-                add(R.id.artist_view, artistFragment, "artist").commit();
-        artistListContainer.setVisibility(View.VISIBLE);
-        artistContainer.setVisibility(View.GONE);
+        } else {
+            currentArtist = savedInstanceState.getInt("artist");
+            hasSeletectedArtist = savedInstanceState.getBoolean("view");
+
+            listFragment = (ArtistListFragment)getSupportFragmentManager().findFragmentByTag("artist_list");
+            if (listFragment==null)
+                listFragment = new ArtistListFragment();
+            artistFragment = (ArtistFragment)getSupportFragmentManager().findFragmentByTag("artist");
+            if (artistFragment==null)
+                artistFragment = new ArtistFragment();
+            artistFragment.setArtist(artists.get(currentArtist));
+
+            if (hasSeletectedArtist){
+                artistListContainer.setVisibility(View.GONE);
+                artistContainer.setVisibility(View.VISIBLE);
+            } else {
+                artistListContainer.setVisibility(View.VISIBLE);
+                artistContainer.setVisibility(View.GONE);
+            }
+        }
     }
 
     @Override
     public void onBackPressed() {
-
         if(hasSeletectedArtist){
-            artistListContainer.setVisibility(View.VISIBLE);
-            artistContainer.setVisibility(View.GONE);
-            hasSeletectedArtist = false;
+            if (!landScape) {
+                artistListContainer.setVisibility(View.VISIBLE);
+                artistContainer.setVisibility(View.GONE);
+            }
+                hasSeletectedArtist = false;
         } else{
             super.onBackPressed();
         }

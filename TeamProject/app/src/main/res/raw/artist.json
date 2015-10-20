@@ -24,51 +24,6 @@
     "videoURL": "https://www.youtube.com/watch?v=yMqL1iWfku4",
     "picUrl": "http://i.imgur.com/CmWn9Na.jpg",
     "concertDate": "Day 3"
-  },
-
-  {
-    "name": "Drake",
-    "descriptionShort": "Rap rap rap",
-    "descriptionLong": "He's a rapper from Canada, some information",
-    "videoURL": "dd",
-    "picUrl": "http://djmag.ca/wp-content/uploads/2015/02/drake-remixes.jpg",
-    "concertDate": "Day 1"
-  },
-
-  {
-    "name": "The Weekend",
-    "descriptionShort": "The Weekend is a pop-rock band from London, Ontario, Canada",
-    "descriptionLong": "Information",
-    "videoURL": "dd",
-    "picUrl": "https://eliteinsiders.files.wordpress.com/2015/07/weekend.png",
-    "concertDate": "Day 1"
-  },
-
-  {
-    "name": "Taylor Swift",
-    "descriptionShort": "Some small unknown singer or something",
-    "descriptionLong": "Information",
-    "videoURL": "dd",
-    "picUrl": "http://i.imgur.com/CaHHiaY.jpg",
-    "concertDate": "Day 1"
-  },
-
-  {
-    "name": "Justen Bieber",
-    "descriptionShort": "Baby baby baby uuuh",
-    "descriptionLong": "Information",
-    "videoURL": "dd",
-    "picUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/Justin_Bieber_2010.jpg",
-    "concertDate": "Day 2"
-  },
-
-  {
-    "name": "Thomas Rhett",
-    "descriptionShort": "No idea who he is, but he looks happy, so we hired him",
-    "descriptionLong": "Information",
-    "videoURL": "dd",
-    "picUrl": "http://i.ytimg.com/vi/ds4JknSr0j4/maxresdefault.jpg",
-    "concertDate": "Day 2"
   }
   ]
 }
