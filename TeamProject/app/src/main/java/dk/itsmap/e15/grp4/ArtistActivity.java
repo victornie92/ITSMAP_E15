@@ -65,6 +65,13 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("artist",currentArtist);
+        outState.putBoolean("view",hasSeletectedArtist);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_artist, menu);
