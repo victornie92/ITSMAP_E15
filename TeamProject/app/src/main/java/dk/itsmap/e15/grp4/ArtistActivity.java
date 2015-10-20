@@ -64,13 +64,13 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
                 artistFragment = new ArtistFragment();
             artistFragment.setArtist(artists.get(currentArtist));
 
-            if (hasSeletectedArtist){
+            /*if (hasSeletectedArtist){
                 artistListContainer.setVisibility(View.GONE);
                 artistContainer.setVisibility(View.VISIBLE);
             } else {
                 artistListContainer.setVisibility(View.VISIBLE);
                 artistContainer.setVisibility(View.GONE);
-            }
+            }*/
         }
     }
 

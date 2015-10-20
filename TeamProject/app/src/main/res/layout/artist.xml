@@ -30,6 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxWidth="200dp"
             android:text="Artist"
             android:textSize="35dp"
             android:textColor="#FF66CC"
