@@ -1,22 +1,29 @@
 package dk.itsmap.e15.grp4;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
-import dk.itsmap.e15.grp4.Days.Day1;
-import dk.itsmap.e15.grp4.Days.Day2;
-import dk.itsmap.e15.grp4.Days.Day3;
-import dk.itsmap.e15.grp4.Days.Day4;
-import dk.itsmap.e15.grp4.Days.Day5;
+import dk.itsmap.e15.grp4.Days.Days;
+
+
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    CharSequence Titles[];
+    String Titles[];
     int NumbOfDays;
+    public int id = 0;
 
     
-    public ViewPagerAdapter(FragmentManager fm,CharSequence mTitles[], int mNumbOfDays) {
+    public ViewPagerAdapter(FragmentManager fm,String mTitles[], int mNumbOfDays) {
         super(fm);
 
         this.Titles = mTitles;
@@ -30,36 +37,142 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         if(position == 0) // if the position is 0 we are returning the First tab
         {
-            Day1 day1 = new Day1();
+              class Days extends Fragment {
+
+                private ListView myListView;
+                private String[] myString;
+
+
+                @Override
+                public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+
+                    View v = inflater.inflate(R.layout.days,container,false);
+
+                    myListView = (ListView) v.findViewById(R.id.Days);
+                    myString = getResources().getStringArray(R.array.day1_list_artist_array);
+
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1, myString);
+                    myListView.setAdapter(adapter);
+
+
+                    return v;
+                }
+            }
+
+            Days day1 = new Days();
             return day1;
         }
-        else if (position == 1)// As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
-        {
-            Day2 day2 = new Day2();
+        else if(position == 1){
+            class Days extends Fragment {
+
+                private ListView myListView;
+                private String[] myString;
+
+
+                @Override
+                public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+
+                    View v = inflater.inflate(R.layout.days,container,false);
+
+                    myListView = (ListView) v.findViewById(R.id.Days);
+                    myString = getResources().getStringArray(R.array.day2_list_artist_array);
+
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1, myString);
+                    myListView.setAdapter(adapter);
+
+
+                    return v;
+                }
+            }
+            Days day2 = new Days();
             return day2;
         }
-        else if(position == 2)
-        {
-            Day3 day3 = new Day3();
+        else if (position == 2){
+            class Days extends Fragment {
+
+                private ListView myListView;
+                private String[] myString;
+
+
+                @Override
+                public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+
+                    View v = inflater.inflate(R.layout.days,container,false);
+
+                    myListView = (ListView) v.findViewById(R.id.Days);
+                    myString = getResources().getStringArray(R.array.day3_list_artist_array);
+
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1, myString);
+                    myListView.setAdapter(adapter);
+
+
+                    return v;
+                }
+            }
+            Days day3 = new Days();
             return day3;
         }
-        else if(position == 3)
-        {
-            Day4 day4 = new Day4();
+        else if(position == 3){
+            class Days extends Fragment {
+
+                private ListView myListView;
+                private String[] myString;
+
+
+                @Override
+                public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+
+                    View v = inflater.inflate(R.layout.days,container,false);
+
+                    myListView = (ListView) v.findViewById(R.id.Days);
+                    myString = getResources().getStringArray(R.array.day4_list_artist_array);
+
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1, myString);
+                    myListView.setAdapter(adapter);
+
+
+                    return v;
+                }
+            }
+            Days day4 = new Days();
             return day4;
         }
-        else
-        {
-            Day5 day5 = new Day5();
+        else {
+            class Days extends Fragment {
+
+                private ListView myListView;
+                private String[] myString;
+
+
+                @Override
+                public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+
+                    View v = inflater.inflate(R.layout.days,container,false);
+
+                    myListView = (ListView) v.findViewById(R.id.Days);
+                    myString = getResources().getStringArray(R.array.day5_list_artist_array);
+
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1, myString);
+                    myListView.setAdapter(adapter);
+
+
+                    return v;
+                }
+            }
+            Days day5 = new Days();
             return day5;
         }
 
     }
 
     // This method return the titles for the Tabs in the Tab Strip
-
     @Override
-    public CharSequence getPageTitle(int position) {
+    public String getPageTitle(int position) {
         return Titles[position];
     }
 

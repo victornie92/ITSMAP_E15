@@ -14,9 +14,8 @@ public class CalenderActivity extends AppCompatActivity {
     ViewPager pager;
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
-    CharSequence Days[]={"Day 1","Day 2", "Day 3", "Day 4", "Day 5"};
+    String Days[]={"Day 1","Day 2", "Day 3", "Day 4", "Day 5"};
     int NumbOfdays = 5;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

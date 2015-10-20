@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="day1_list_artist_array">
+        <item>Drake</item>
+        <item>The Weekend</item>
+        <item>Fetty Wap</item>
+        <item>Taylor Swift</item>
+    </string-array>
+
+    <string-array name="day2_list_artist_array">
+        <item>Future</item>
+        <item>Justin Bieber</item>
+        <item>Thomas Rhett</item>
+        <item>George Strait</item>
+    </string-array>
+
+    <string-array name="day3_list_artist_array">
+        <item>Don Henley</item>
+        <item>Ed Sheeran</item>
+        <item>Luke Bryan</item>
+        <item>One Direction</item>
+    </string-array>
+
+    <string-array name="day4_list_artist_array">
+        <item>Shawn Mendes</item>
+        <item>Selena Gomez</item>
+        <item>Sam Smith</item>
+        <item>Demi Lovato</item>
+    </string-array>
+
+    <string-array name="day5_list_artist_array">
+        <item>Meghan Trainor</item>
+        <item>Ellie Goulding</item>
+        <item>Disclosure</item>
+        <item>Maroon 5</item>
+    </string-array>
+</resources>
