@@ -1,6 +1,7 @@
 package dk.itsmap.e15.grp4;
 
 //Code inspiration from: Kasper's arnie example
+//Code from http://www.androidhive.info/2012/07/android-gps-location-manager-tutorial/
 /**
  * Created by Peter-PC on 08-10-2015.
  */
