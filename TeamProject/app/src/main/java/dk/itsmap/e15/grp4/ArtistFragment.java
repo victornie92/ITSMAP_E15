@@ -1,5 +1,6 @@
 package dk.itsmap.e15.grp4;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -126,4 +127,16 @@ public class ArtistFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try{
+            selectorInterface = (ArtistInterface) activity;
+        } catch (ClassCastException ex) {
+            //Activity does not implement correct interface
+            throw new ClassCastException(activity.toString() + " must implement MovieSelectorInterface");
+        }
+
+    }
 }

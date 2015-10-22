@@ -1,6 +1,7 @@
 package dk.itsmap.e15.grp4;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -49,8 +50,8 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
             getSupportFragmentManager().beginTransaction().
                     add(R.id.list_view, listFragment, "artist_list").
                     add(R.id.artist_view, artistFragment, "artist").commit();
-            artistListContainer.setVisibility(View.VISIBLE);
-            artistContainer.setVisibility(View.GONE);
+
+            setView();
 
         } else {
             currentArtist = savedInstanceState.getInt("artist");
@@ -64,24 +65,31 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
                 artistFragment = new ArtistFragment();
             artistFragment.setArtist(artists.get(currentArtist));
 
-            /*if (hasSeletectedArtist){
+            setView();
+        }
+    }
+
+    //Sets view depending on orientation and if artist is selected or not
+    public void setView(){
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            artistListContainer.setVisibility(View.VISIBLE);
+            artistContainer.setVisibility(View.VISIBLE);
+        }else {
+            if (hasSeletectedArtist) {
                 artistListContainer.setVisibility(View.GONE);
                 artistContainer.setVisibility(View.VISIBLE);
             } else {
                 artistListContainer.setVisibility(View.VISIBLE);
                 artistContainer.setVisibility(View.GONE);
-            }*/
+            }
         }
     }
 
     @Override
     public void onBackPressed() {
         if(hasSeletectedArtist){
-            if (!landScape) {
-                artistListContainer.setVisibility(View.VISIBLE);
-                artistContainer.setVisibility(View.GONE);
-            }
-                hasSeletectedArtist = false;
+            hasSeletectedArtist = false;
+            setView();
         } else{
             super.onBackPressed();
         }
@@ -134,8 +142,7 @@ public class ArtistActivity extends AppCompatActivity implements ArtistInterface
                 artistFragment.setArtist(selectedArtist);
             }
         }
-        artistListContainer.setVisibility(View.GONE);
-        artistContainer.setVisibility(View.VISIBLE);
+        setView();
         hasSeletectedArtist = true;
     }
 

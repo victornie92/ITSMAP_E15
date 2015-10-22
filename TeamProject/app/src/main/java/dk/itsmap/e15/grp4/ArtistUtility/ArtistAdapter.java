@@ -81,6 +81,9 @@ public class ArtistAdapter extends BaseAdapter {
         return convertView;
     }
 
+    //This sometimes kills the app, because to many Async calls are made at a time. Should not start
+    //more than 5 threads. But so far it starts a new thread for every artist.
+    //So really download all pictures together and cache them and download them together
     private class ImageTask extends AsyncTask<String, Void, Bitmap>{
         ImageView bitmapImage;
 
