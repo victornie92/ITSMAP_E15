@@ -7,7 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import dk.itsmap.e15.grp4.R;
+import dk.itsmap.e15.grp4.CalenderActivity.CalenderActivity;
+import dk.itsmap.e15.grp4.InfoActivity.InfoActivity;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 
 import dk.itsmap.e15.grp4.ArtistUtility.Artist;
 import dk.itsmap.e15.grp4.ArtistUtility.ArtistListBuilder;
+import dk.itsmap.e15.grp4.CalenderActivity.CalenderActivity;
+import dk.itsmap.e15.grp4.InfoActivity.InfoActivity;
 
 import java.util.ArrayList;
 

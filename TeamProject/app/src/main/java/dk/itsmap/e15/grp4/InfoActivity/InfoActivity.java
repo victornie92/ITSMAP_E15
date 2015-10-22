@@ -1,12 +1,24 @@
-package dk.itsmap.e15.grp4;
+package dk.itsmap.e15.grp4.InfoActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
+import java.util.List;
+import java.util.Vector;
+
+import dk.itsmap.e15.grp4.ArtistActivity;
+import dk.itsmap.e15.grp4.CalenderActivity.CalenderActivity;
+import dk.itsmap.e15.grp4.CalenderActivity.CustomPagerAdapter;
+import dk.itsmap.e15.grp4.MainActivity;
+import dk.itsmap.e15.grp4.MapsActivity;
 import dk.itsmap.e15.grp4.R;
 
 /**
@@ -14,34 +26,34 @@ import dk.itsmap.e15.grp4.R;
  */
 public class InfoActivity extends AppCompatActivity {
 
-    ViewPager pager;
-    ViewInfoAdapter adapter;
-    SlidingTabLayout tabs;
-    CharSequence info[] = {"Buy Ticket", "Contact"};
-    int numbOfinfo = 2;
+    private Context myText;
+    CustomPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        adapter = new ViewInfoAdapter(getSupportFragmentManager(), info, numbOfinfo);
+        myText = this;
 
-        pager = (ViewPager)findViewById(R.id.pager);
-        pager.setAdapter(adapter);
+        ListView buyTicket = new ListView(myText);
+        ListView developer = new ListView(myText);
+        ListView info = new ListView(myText);
 
-        tabs = (SlidingTabLayout)findViewById(R.id.tabs);
-        tabs.setDistributeEvenly(true);
+        Vector<View> information = new Vector<View>();
 
-        tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer()
-        {
-            @Override
-            public int getIndicatorColor(int position){
-                return getResources().getColor(R.color.tabsScrollColor);
-            }
+        information.add(buyTicket);
+        information.add(developer);
+        information.add(info);
 
-        });
-        tabs.setViewPager(pager);
+        ViewPager vp = (ViewPager)findViewById(R.id.pager);
+        adapter = new CustomPagerAdapter(myText, information);
+        vp.setAdapter(adapter);
+
+        buyTicket.setAdapter(new ArrayAdapter<String>(myText, android.R.layout.simple_list_item_1,new String[]{"Buy Ticket"}));
+        developer.setAdapter(new ArrayAdapter<String>(myText, android.R.layout.simple_list_item_1,new String[]{"Victor Nielsen", "Peter Tien Mai", "Anders Revsgaard Andreasen"}));
+        info.setAdapter(new ArrayAdapter<String>(myText, android.R.layout.simple_list_item_1,new String[]{"SmartPhone APP, IHA, Findlandsgade 22, 8200, Aarhus N, Danmark"}));
+
     }
 
     @Override

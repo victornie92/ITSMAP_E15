@@ -35,10 +35,10 @@
             android:label="@string/northside">
         </activity>
         <activity
-            android:name="dk.itsmap.e15.grp4.CalenderActivity"
+            android:name=".CalenderActivity.CalenderActivity"
             android:label="@string/northside" >
         </activity>
-        <activity android:name="dk.itsmap.e15.grp4.InfoActivity"
+        <activity android:name=".InfoActivity.InfoActivity"
             android:label="@string/northside">
         </activity>
 
