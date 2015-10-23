@@ -12,6 +12,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import dk.itsmap.e15.grp4.ArtistActivity;
@@ -31,37 +38,72 @@ public class CalenderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calender);
 
         myText = this;
+        Vector<View> allDays = new Vector<View>();
 
-        ListView day1 = new ListView(myText);
-        ListView day2 = new ListView(myText);
-        ListView day3 = new ListView(myText);
-        ListView day4 = new ListView(myText);
-        ListView day5 = new ListView(myText);
+        String response = loadJSON();
+        JSONArray schedule = null;
 
-        Vector<View> days = new Vector<View>();
 
-        days.add(day1);
-        days.add(day2);
-        days.add(day3);
-        days.add(day4);
-        days.add(day5);
+        try {
 
-        ViewPager vp = (ViewPager)findViewById(R.id.pager);
-        adapter = new CustomPagerAdapter(myText, days);
-        vp.setAdapter(adapter);
+            JSONObject data;
+            data = new JSONObject(response);
 
-        Resources res = getResources();
-        String[] artist_one = res.getStringArray(R.array.day1_list_artist_array);
-        String[] artist_two = res.getStringArray(R.array.day2_list_artist_array);
-        String[] artist_three = res.getStringArray(R.array.day3_list_artist_array);
-        String[] artist_four = res.getStringArray(R.array.day4_list_artist_array);
-        String[] artist_five = res.getStringArray(R.array.day5_list_artist_array);
+            schedule = data.getJSONArray("schedule");
 
-        day1.setAdapter(new ArrayAdapter<String>(myText, android.R.layout.simple_list_item_1,artist_one));
-        day2.setAdapter(new ArrayAdapter<String>(myText, android.R.layout.simple_list_item_1,artist_two));
-        day3.setAdapter(new ArrayAdapter<String>(myText, android.R.layout.simple_list_item_1,artist_three));
-        day4.setAdapter(new ArrayAdapter<String>(myText, android.R.layout.simple_list_item_1,artist_four));
-        day5.setAdapter(new ArrayAdapter<String>(myText, android.R.layout.simple_list_item_1,artist_five));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        if (schedule != null){
+
+            for (int i = 0; i < schedule.length(); i++){
+                ListView day = new ListView(myText);
+                JSONArray artist;
+                ArrayList<String> artists = new ArrayList<String>();
+                String [] ar = null;
+                try {
+                    JSONObject x = schedule.getJSONObject(i);
+                    artist = x.getJSONArray("artists");
+
+                    for (int j = 0; j < artist.length(); j++){
+                        artists.add(artist.getString(j));
+                    }
+
+                    ar = new String[artists.size()];
+                    ar = artists.toArray(ar);
+
+                    day.setAdapter(new ArrayAdapter<String>(myText, android.R.layout.simple_list_item_1, ar));
+                    allDays.add(day);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            ViewPager vp = (ViewPager)findViewById(R.id.pager);
+            adapter = new CustomPagerAdapter(myText, allDays);
+            vp.setAdapter(adapter);
+
+        }
+
+
+    }
+
+    public String loadJSON(){
+        String jsonResponse = null;
+        try{
+            InputStream inStream = getResources().openRawResource(getResources().
+                    getIdentifier("raw/artist", "raw", getPackageName()));
+            int size = inStream.available();
+            byte[] buf = new byte[size];
+            inStream.read(buf);
+            inStream.close();
+            jsonResponse = new String(buf,"UTF-8");
+        } catch(Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        return jsonResponse;
     }
 
     @Override
