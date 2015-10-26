@@ -51,27 +51,27 @@
   "schedule":[
     {
       "date": "day1",
-      "artists":["SNSD","Drake","MØ","Ukendt Kunstner","Burhan G","Nik & Jay","L.O.C","Scarlet Pleasure","Carpark North","The Minds Of 99","Medina","Vild $mith"]
+      "artists":["SNSD","Drake","Ukendt Kunstner"]
     },
 
     {
       "date": "day2",
-      "artists":["IU","Drake","Potato"]
+      "artists":["IU","Drake","MØ"]
     },
 
     {
       "date": "day3",
-      "artists":["Crayon Pop"]
+      "artists":["Crayon Pop", "Burhan G","Nik & Jay"]
     },
 
     {
       "date": "day4",
-      "artists":["Taylor Swift", "Fatty Wrap"]
+      "artists":["Taylor Swift", "Fatty Wrap","Medina"]
     },
 
     {
       "date": "day5",
-      "artists":["WORLD ORDER","Die Antwoord"]
+      "artists":["WORLD ORDER","Die Antwoord","L.O.C"]
     }
   ]
 }
